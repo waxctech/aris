@@ -6,5 +6,7 @@ package project.kt.app.app
 class MessageUtils {
     companion object {
         fun getMessage(): String = "Hello      World!"
+
+        fun sum(x: Int, y: Int): Int = x + y
     }
 }
