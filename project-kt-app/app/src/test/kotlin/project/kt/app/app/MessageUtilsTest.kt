@@ -3,12 +3,17 @@
  */
 package project.kt.app.app
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.assertEquals
-
 class MessageUtilsTest {
-    @Test fun testGetMessage() {
+    @Test
+    fun testGetMessage() {
         assertEquals("Hello      World!", MessageUtils.getMessage())
+    }
+
+    @Test
+    fun testSum() {
+        assertEquals(3, MessageUtils.sum(1, 2))
     }
 }

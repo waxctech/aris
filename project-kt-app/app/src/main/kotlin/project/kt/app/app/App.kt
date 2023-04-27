@@ -10,5 +10,7 @@ import org.apache.commons.text.WordUtils
 fun main() {
     val tokens = StringUtils.split(MessageUtils.getMessage())
     val result = StringUtils.join(tokens)
-    println(WordUtils.capitalize(result))
+    val sum = MessageUtils.sum(1,2)
+    println(WordUtils.capitalize(result)+sum)
+
 }
