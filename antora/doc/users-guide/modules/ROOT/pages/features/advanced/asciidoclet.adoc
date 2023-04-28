@@ -1,0 +1,180 @@
+= Asciidoclet
+// see: AsciiDocJavaDocInfoGenerator
+:description: This plugin shows a preview of Asciidoclet content, when AsciiDoc is part of Javadoc API documentation.
+
+The https://github.com/asciidoctor/asciidoclet[Asciidoclet^] project allows developers to write their code Javadoc API documentation using AsciiDoc.
+This plugin renders the AsciiDoc contents when previewing the documentation.
+
+[NOTE]
+====
+Support for this is available from AsciiDoc Plugin release 0.30.83 for IntelliJ IDEA 2019.3+ and 0.31.9 for IntelliJ IDEA 2020.2+.
+
+Starting with AsciiDoc Plugin release 0.31.13, it moved to a separate _Asciidoclet_ Plugin as it prevented the AsciiDoc Plugin to be dynamically installable without a restart.
+
+This feature is in its early development and marked "`experimental`".
+Its functionality might change over time.
+====
+
+== How to use it
+
+=== Using IntelliJ 2020.2+
+
+Users need to install the https://plugins.jetbrains.com/plugin/14696-asciidoclet[Asciidoclet plugin^]:
+
+Steps::
++
+. Open the IDE's setting via menu:File[Settings...] +
+. Select _Plugins_ from the settings tree
+. Select _Marketplace_ tab if it is not selected yet
+. Search for 'asciidoclet'
+. Click on the btn:[Install] button. +
+As the Asciidoclet plugin depends on the AsciiDoc plugin, the IDE will ask to install the AsciiDoc plugin as well if it is not already installed.
+. Once the download is complete, restart the IDE
+
+After the restart the Quick-Help (kbd:[Ctrl+Q]) will render all Javadoc-comments as AsciiDoc.
+This is a global setting for all projects.
+To change the settings, follow these steps:
+
+Steps::
++
+. Open the menu menu:File[Settings... > Languages & Frameworks > Asciidoclet]
+. Check or uncheck the checkbox "`Enable Asciidoclet support (AsciiDoc in Javadoc)`"
+
+Since IDEA release 2020.1 users can choose to show Javadoc comments rendered by the editor.
+With IDEA release 2020.2 and the latest version of the Asciidoclet Plugin this is supported for Asciidoclet as well.
+See chapter https://www.jetbrains.com/help/idea/working-with-code-documentation.html#toggle-rendered-view["`Render Javadocs`"] in the IDEA documentation for more information.
+
+=== Using IntelliJ 2019.3+
+
+Users need to enable this feature in the plugin's settings:
+
+Steps::
+. Open the menu menu:File[Settings... > Languages & Frameworks > AsciiDoc].
+. Check the checkbox "`Enable Asciidoclet support (AsciiDoc in JavaDoc)`".
+
+Once this check-box is enabled, the Quick-Help (kbd:[Ctrl+Q]) will render all Javadoc-comments as AsciiDoc.
+This is a global setting for all projects.
+
+Since IDEA release 2020.1 users can choose to show JavaDoc comments rendered by the editor.
+This is supported with the Asciidoclet plugin from IntelliJ 2020.2 onward only.
+
+== Detection of Asciidoclet vs. Javadoc
+
+When working in different projects, there might be AsciiDoc used in some files, but not in others.
+Libraries might use JavaDoc, some not.
+
+As default, the plugin will render all Javadoc contents as AsciiDoc with the following exception:
+
+. If the Javadoc contents contain an HTML tag `<p>` the plugin assumes the contents should be rendered as standard Javadoc without the AsciiDoc conversion.
+
+== Preview while editing Asciidoclet
+
+When editing Javadoc content, users can open quick docs in a separate window that stays open permanently.
+It will always show the documentation related to the current at the cursor's position.
+
+When editing the Javadoc contents, the documentation window will show the update Asciidoc rendered version with a short delay.
+
+To show the documentation window, choose the menu item menu:View[Tool Windows > Documentation] (sometimes hidden based on the current context at the cursor position) or by pressing kbd:[Ctrl+Q] twice.
+
+== Reformatting Settings
+
+The default setup of IntelliJ will add the HTML tag `<p>` on blank lines in Asciidoclet content.
+This will break the AsciiDoc syntax.
+
+This is due to IntelliJ treating Asciidoclet as JavaDoc when reformatting.
+
+A minimal recommended setting is to disable adding `<p>` to empty lines.
+
+To disable this, use either IDE's settings, or use an EditorConfig file.
+The instructions below describe both approaches.
+
+=== Configure Reformatting of AsciiDoclet via IDE Settings
+
+The user can change the settings via menu:File[Settings... > Editor > Code Style > Java > JavaDoc > Other] and uncheck the option '`Generate "<p>" on empty lines`'.
+
+The changes are effective once the user confirms the settings via _Apply_ or _OK_.
+
+.IntelliJ's AsciiDoc formatting settings
+image::javadoc-formatting-settings.png[]
+
+=== Configure Reformatting of AsciiDoclet via EditorConfig
+
+IntelliJ supports the https://editorconfig.org/[EditorConfig] standard to configure re-formatting options on a per-project and per-folder level.
+Read and find out more about it in the https://blog.jetbrains.com/idea/2019/06/managing-code-style-on-a-directory-level-with-editorconfig/[IntelliJ blog].
+
+All IntelliJ reformatting options are available in EditorConfig files and are prefixed with `ij_`.
+Autocompletion shows all available options.
+The _.editorconfig_ file affects all project files in its folder and its sub-folders.
+A file with `root = true` is usually located in the root folder of the project and indicates the main configuration file.
+Additional _.editorconfig_ files in a sub-folder can override settings in the file tree they are located in.
+
+After creating the file, re-opening the project might be necessary for the IntelliJ settings to take effect.
+
+Find an example below.
+
+..editorconfig example with AsciiDoclet settings
+[source,editorconfig]
+----
+# .editorconfig
+# see https://editorconfig.org/ for the documentation
+root = true
+
+[*.java]
+ij_java_doc_add_p_tag_on_empty_lines = false
+
+# optional: also preserve all line breaks
+# ij_java_doc_preserve_line_breaks = true
+# optional: disable all JavaDoc formatting
+# ij_java_doc_enable_formatting = false
+----
+
+== Limitations
+
+=== Annotations in Javadoc code snippets
+
+While Asciidoclet supports annotations within Javadoc code snippets, this plugin doesn't as it breaks parsing of the content.
+
+Instead of writing content like this:
+
+[source,java,subs="quotes"]
+----
+/\**
+ * [source,java]
+ * --
+ *     ##@##SuppressWarnings("UnusedDeclaration")
+ *     /\*...*/
+ * --
+...
+----
+
+Rewrite it like this:
+
+[source,java,subs="quotes"]
+----
+/\**
+ * [source,java]
+ * --
+ *     ##{at}##SuppressWarnings("UnusedDeclaration")
+ *     /\*...*/
+ * --
+...
+----
+
+=== Start path of includes
+
+Includes will use a path relative to the root of the project.
+While Asciidoclet allows users to override the path on the command line, the plugin doesn't allow for in the current version.
+
+=== HTML styling of Asciidoclet
+
+When viewing rendered Asciidoclet content in the documentation window IDEA supports only a limited amount of CSS styling.
+One example are section headlines: they all have the same size and font as the regular text.
+
+=== Syntax Highlighting when writing Asciidoclet
+
+The current version of the plugin doesn't provide AsciiDoc language injection for the Javadoc content.
+Therefore, writers miss autocompletion in the editor.
+Vote for this in issue https://youtrack.jetbrains.com/issue/IDEA-231876[IDEA-231876] at JetBrains to raise attention to this or contribute to the IntelliJ community edition.
+
+
+

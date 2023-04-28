@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contribute as a user :: IntelliJ AsciiDoc Plugin</title>
+    <link rel="canonical" href="https://intellij-asciidoc-plugin.ahus1.de/docs/contributors-guide/contribute-as-a-user.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="user/write-a-review.html">
+    <meta name="description" content="There are several ways how to support the development of the plugin as a user of the plugin. No programming skills required!">
+    <meta name="generator" content="Antora 3.1.3">
+<!-- https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="../antora/css/site.css">
+<link rel="stylesheet" href="../antora/css/search.css">
+<link rel="stylesheet" href="../antora/css/custom.css">
+<link rel="stylesheet" href="../antora/css/font-awesome.min.css">
+    <script>var uiRootPath = '../antora'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/"><img src="/assets/images/ad-logo.svg" height="40" width="40" class="logo" style="margin-right: 0.55rem" alt=""> IntelliJ AsciiDoc Plugin</a>
+            <div class="navbar-item search hide-for-print">
+                <div id="search-field" class="field has-filter">
+                    <input id="search-input" type="text" placeholder="Search the docs">
+                        <input checked style="display: none" type="checkbox" data-facet-filter="component:contributors-guide">
+                </div>
+            </div>
+        <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/docs/users-guide/quick-start.html">Quick-Start</a>
+        </div>
+          <div class="navbar-item">
+              <a href="/docs/users-guide/index.html">User’s Guide</a>
+          </div>
+          <div class="navbar-item">
+              <a href="/docs/contributors-guide/index.html">Contributor’s Guide</a>
+          </div>
+        <div class="navbar-item">
+          <a href="/docs/users-guide/faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="contributors-guide" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Contributor’s Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item is-current-path is-active" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Why contribute</a>
+  </li>
+  <li class="nav-item is-current-page is-active" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contribute-as-a-user.html">Contribute as a user</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/write-a-review.html">Write a review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/report-errors.html">Report Errors</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/join-discussion-on-github.html">Join the discussion on GitHub</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/subscribe-to-new-releases.html">Subscribe to new preview releases</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/installing-a-preview-release.html">Installing a preview release</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/add-eap-repository-to-ide.html">Using the Early Access repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user/upvote-intellij-issues.html">Upvote IDEA issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contribute-as-a-coder.html">Contribute as a coder</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/setup-environment.html">Setup environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/building-and-running.html">Building and running</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/intro-to-plugin-development.html">Plugin development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/debugging-and-logging.html">Debugging and Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/lexing-and-parsing.html">Lexing and parsing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/inspections.html">Inspections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/preview.html">Rendering preview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/upgrading-asciidoctor.html">Upgrading Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="coder/releasing-plugin.html">Releasing the plugin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contribute-as-a-writer.html">Contribute as a writer</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docs/edit-documentation-content.html">Edit documentation content</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docs/change-documentation-theme.html">Changing the documentation theme</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docs/change-startpage.html">Changing the start page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docs/writing-user-documentation.html">Writing user documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="contribute-as-a-sponsor.html">Contribute as a sponsor</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Contributor’s Guide</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">Contributor’s Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">default</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../users-guide/index.html">User’s Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../users-guide/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../users-guide/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Contributor’s Guide</a></li>
+    <li><a href="contribute-as-a-user.html">Contribute as a user</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin/edit/main/doc/contributors-guide/modules/ROOT/pages/contribute-as-a-user.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Contribute as a user</h1>
+<div class="paragraph">
+<p>There are several ways how to support the development of the plugin as a user of the plugin. No programming skills required!</p>
+</div>
+<div class="paragraph">
+<p>Read more on how to can help:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="user/write-a-review.html" class="xref page">Write a review</a></p>
+</li>
+<li>
+<p><a href="user/report-errors.html" class="xref page">Report Errors</a></p>
+</li>
+<li>
+<p><a href="user/join-discussion-on-github.html" class="xref page">Join the discussion on GitHub</a></p>
+</li>
+<li>
+<p><a href="user/subscribe-to-new-releases.html" class="xref page">Subscribe to new preview releases</a></p>
+</li>
+<li>
+<p><a href="user/installing-a-preview-release.html" class="xref page">Installing a preview release</a></p>
+</li>
+<li>
+<p><a href="user/add-eap-repository-to-ide.html" class="xref page">Using the Early Access repository of the AsciiDoc plugin</a></p>
+</li>
+<li>
+<p><a href="user/upvote-intellij-issues.html" class="xref page">Upvote an IDEA issue</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To give a financial contribution, continue to section <em><a href="contribute-as-a-sponsor.html" class="xref page">Contribute as a sponsor</a></em>.</p>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Why contribute</a></span>
+  <span class="next"><a href="user/write-a-review.html">Write a review</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+    <p>This page was built using <a href="https://antora.org/" rel="nofollow">Antora</a> - © 2013-2021 Julien Viet, Erik Pragt, Alexander Schwartz and the individual contributors. Released under the Apache License, Version 2.0 - <a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin" rel="nofollow">GitHub</a> - <a href="/imprint" rel="nofollow">Imprint</a> - <a href="/privacy" rel="nofollow">Privacy</a></p>
+</footer>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" onclick="closeModal()">
+        <!--suppress HtmlRequiredAltAttribute as this will be set when selecting the image via JavaScript,
+        RequiredAttributes as src will be set by when selecting the image via JavaScript -->
+        <img id="imageinmodal">
+    </div>
+</div>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        // use overflowY = hidden to prevent the body from scrolling when modal is visible
+        // doesn't work with overscroll-behavior, as this would work only when the modal has a scrollbar
+        document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        document.getElementsByTagName("body")[0].style.overflowY = "auto";
+    }
+
+    document.querySelectorAll('.imageblock img').forEach(element => {
+        if (element.closest('a') === null) {
+            element.className += " lightbox";
+            element.addEventListener('click', evt => {
+                document.getElementById("imageinmodal").setAttribute("src", evt.currentTarget.getAttribute("src"))
+                document.getElementById("imageinmodal").setAttribute("alt", evt.currentTarget.getAttribute("alt"))
+                openModal();
+            })
+        }
+    });
+</script>
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        padding-top: 5vh;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        backdrop-filter: blur(3px);
+        background-color: rgba(30, 30, 30, 0.8);
+    }
+    img.lightbox {
+        cursor: pointer;
+    }
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-height: 90vh;
+        cursor: pointer;
+    }
+
+    .modal-content img {
+        width: auto;
+        height: auto;
+        max-width: 90vw;
+        max-height: 90vh;
+        min-width: 90vw;
+        min-height: 90vh;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        object-fit: contain;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<script src="../antora/js/os-switcher.js"></script>
+<script>
+    const navbarEl = document.getElementsByClassName("navbar")[0]
+    const toolbarEl = document.getElementsByClassName("toolbar")[0]
+    let NAVBAR_HEIGHT
+    let horizon
+    let scrollFactor = 0
+    let whereYouStoppedScrolling = 0
+    let currentTranslate = 0
+    let currentStyle = ""
+
+    function upOrDown(lastY, currentY) {
+        if (currentY >= lastY) {
+            return goingDown(currentY)
+        }
+        return goingUp(currentY)
+    }
+
+    function goingDown(currentY) {
+        whereYouStoppedScrolling = currentY
+
+        if (currentY > horizon) {
+            horizon = currentY
+        }
+
+        translateHeader(currentY, false)
+    }
+
+    function goingUp(currentY) {
+        if (currentY < whereYouStoppedScrolling - NAVBAR_HEIGHT) {
+            horizon = currentY + NAVBAR_HEIGHT
+        }
+
+        translateHeader(currentY, true)
+    }
+
+    function constrainDelta(delta) {
+        return Math.max(0, Math.min(delta, NAVBAR_HEIGHT))
+    }
+
+    function translateHeader(currentY, upwards) {
+        let translateValue
+
+        // if I have scrolled down sufficiently, the navbar appears faster
+        if (currentY > NAVBAR_HEIGHT * 2) {
+            scrollFactor = 1
+        } else if (currentY > NAVBAR_HEIGHT) {
+            scrollFactor = (currentY - NAVBAR_HEIGHT) / NAVBAR_HEIGHT
+        } else {
+            scrollFactor = 0
+        }
+
+        if (upwards && currentTranslate === 0) {
+            translateValue = 0
+        } else {
+            const delta = constrainDelta(
+                    Math.abs(currentY - horizon) * (1 + scrollFactor)
+            )
+            translateValue = delta - NAVBAR_HEIGHT
+        }
+
+        if (window.innerWidth > 1024) {
+            translateValue = 0
+        } else if (document.getElementsByClassName("nav-container")[0].classList.contains("is-active")) {
+            translateValue = 0
+        }
+
+        if (!isNaN(translateValue)) {
+            let navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            if (translateValue === -NAVBAR_HEIGHT) {
+                navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            }
+            if (currentY <= NAVBAR_HEIGHT) {
+                navbarStyle = `transform: translateY(${translateValue}px);`
+            }
+            currentTranslate = translateValue
+            if (currentStyle !== navbarStyle) {
+                currentStyle = navbarStyle
+                navbarEl.setAttribute("style", navbarStyle)
+                toolbarEl.setAttribute("style", navbarStyle)
+            }
+        }
+    }
+
+    translateHeader(window.scrollY, false)
+
+    let ticking = false
+    let lastY = 0
+
+    window.addEventListener("scroll", function () {
+        if (NAVBAR_HEIGHT === undefined) {
+            // lazy initialization on first scroll
+            NAVBAR_HEIGHT =
+                    parseInt(window.getComputedStyle(navbarEl).height.replace("px", "")) +
+                    1
+            horizon = NAVBAR_HEIGHT
+        }
+        const currentY = window.scrollY
+
+        if (!ticking && window.requestAnimationFrame) {
+            window.requestAnimationFrame(function () {
+                upOrDown(lastY, currentY)
+                ticking = false
+                lastY = currentY
+            })
+        }
+
+        ticking = true
+    })
+
+    window.addEventListener('resize', function () {
+        NAVBAR_HEIGHT = undefined
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+
+    document.getElementsByClassName("nav-toggle")[0].addEventListener("click", function () {
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+</script>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '..'
+  window.antora.pagePath = '/contributors-guide/contribute-as-a-user.html'
+</script>
+<script src="../antora/js/site.js"></script>
+<script src="../antora/js/vendor/lunr.js"></script>
+<script src="../antora/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../antora/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

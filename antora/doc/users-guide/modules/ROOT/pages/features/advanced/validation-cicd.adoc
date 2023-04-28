@@ -1,0 +1,114 @@
+= Validation during Continuous Integration and Delivery
+:navtitle: Validation in CI/CD
+:description: Use the same validations as in the IDE in the CI/CD setup.
+
+{description}
+
+== Qodana to run the IntelliJ AsciiDoc plugin in CD/CD
+
+JetBrains published https://www.jetbrains.com/qodana/[Qodana] that wraps the smart features of IntelliJ into a container, so it can be used on the command line as a Docker container.
+To make this simpler to use, it has been https://github.com/JetBrains/qodana-action[wrapped as a GitHub action].
+
+For AsciiDoc files, it will highlight all the problems that are highlighted in the IDE as well, including broken links (with the help of the AsciiDoc plugin) as well as grammar errors (with the help of the https://plugins.jetbrains.com/plugin/12175-grazie[Grazie] and https://plugins.jetbrains.com/plugin/16136-grazie-professional[Grazie Professional] plugins).
+
+.Overview Qodana process
+image::qodana/qodana-concepts.dio.svg[]
+
+The process is as follows:
+
+. Read all or parts of the project's sources.
+This can be source code in any programming language or documentation like AsciiDoc.
+
+. Process the files like with all the inspections known from IntelliJ.
+Users can add plugins from the Marketplace like in their IDE to support the languages they need.
+
+. Generate a report as HTML to be used in a browser, as well as a SARIF report that can be processed by GitHub Code Scanning or other subsequent steps in the CI/CD pipeline.
+
+== Example output
+
+=== HTML report
+
+See below for an HTML report that Qodana generates.
+With the GitHub Action setup below, it will be attached as a ZIP file to workflow run instance.
+
+.Qodana report with AsciiDoc inspection warnings
+image::qodana/qodana-html-report.png[]
+
+The CI/CD process can publish the HTML report to a webserver so users can access it.
+In the example below, the GitHub action pushes the latest report to the https://asciidoctor.github.io/asciidoctor-intellij-plugin/[GitHub pages of the AsciiDoc plugin project^].
+
+=== Pull request annotation
+
+See below for a screenshot of an annotated GitHub pull request.
+Using the SARIF integration, GitHub can compare the pull request with the base branch and will show only new problems introduced by the pull request.
+
+These examples show AsciiDoc syntax errors as examples.
+This setup shows Grammar in the same way.
+
+.Status as shown in the pull request
+image::qodana/qodana-pullrequest-status.png[]
+
+Once the user clicks on the details of the code scanning, they see a list of all new violations.
+
+.Details of GitHub Code Scanning
+image::qodana/qodana-codescanning-results.png[]
+
+Once the user clicks on one of the annotations, GitHub shows the code.
+
+.Annotation in the source code
+image::qodana/qodana-pullrequest-annotation.png[]
+
+== Example setup for GitHub Actions
+
+This describes the setup used for this plugin.
+With the benefit of being a real-world scenario, some steps might be more complicated than a simple setup.
+
+. Setup Qodana configuration file.
+It is placed in the root folder where it will run.
++
+.doc/qodana.yaml
+[source,yaml]
+----
+include::example$qodana.yaml[]
+----
+
+. Setup file with all inspections to run.
+It is placed in the root folder where it will run.
+For this setup, all inspections are specified one-by-one.
+Alternative setups could configure only deviations from a standard configuration.
++
+.doc/asciidoc-inspection.xml
+[source,xml]
+----
+include::example$qodana-asciidoc-inspection.xml[]
+----
+
+. Add a workflow the GitHub repository by adding the following file (see https://github.com/asciidoctor/asciidoctor-intellij-plugin/blob/main/.github/workflows/build.yml[_docs.yml_^] in the GitHub repo):
++
+..github/workflows/docs.yml
+[source,yaml]
+----
+include::example$workflow-docs.yml[tags=!cleanup]
+----
+
+== Further reading
+
+* GitHub Code Scanning
+** https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/uploading-a-sarif-file-to-github[Uploading a SARIF file]
+** https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning[SARIF support]
+* Qodana
+** https://www.jetbrains.com/qodana/[Product homepage]
+** https://www.jetbrains.com/help/qodana/welcome.html[Reference documentation]
+** https://www.jetbrains.com/help/qodana/qodana-jvm-community-docker-readme.html[Qodana community docker image]
+** https://www.jetbrains.com/help/qodana/qodana-github-action.html[Using GitHub Actions]
+
+== Open issues with Qodana
+
+The following issues in the Qodana issue tracker are open.
+Voting for them will make this integration simpler.
+
+* https://youtrack.jetbrains.com/issue/QD-1291[QD-1291^]
+Qodana easy plugin installation
+* https://youtrack.jetbrains.com/issue/QD-1290[QD-1290^]
+Add soft wrap to code preview
+

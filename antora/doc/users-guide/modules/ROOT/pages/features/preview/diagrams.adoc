@@ -1,0 +1,225 @@
+= Diagrams in the preview
+:description: The preview of the AsciiDoc plugin supports rendering the diagrams in the preview. It supports both the Asciidoctor Diagram and the Kroki plugin.
+:uri-asciidoctor-diagrams-gh: https://github.com/asciidoctor/asciidoctor-diagram
+:uri-asciidoctor-diagrams-execs: {uri-asciidoctor-diagrams-gh}#specifying-diagram-generator-paths
+:uri-kroki: https://kroki.io
+
+// make preview work on non-Antora sites, for example, GitHub
+ifndef::env-site[]
+:imagesdir: ../../images
+endif::[]
+
+The preview of the AsciiDoc plugin supports rendering the diagrams in the preview.
+Two different types of diagram renderer are supported: <<asciidoctor-diagram>> and <<kroki>>.
+
+[[asciidoctor-diagram,Asciidoctor Diagram]]
+== Using Asciidoctor Diagram
+
+By default, the plugin uses the extension {uri-asciidoctor-diagrams-gh}[Asciidoctor Diagram]
+that depends on locally installed tools to generate images (i.e. {uri-asciidoctor-diagrams-execs}[executables] available in the `PATH` environment variable).
+
+The extension Asciidoctor Diagram renders the content of the editor, including all referenced includes, images and diagrams like PlantUML on the fly.
+
+=== Downloading Asciidoctor Diagram
+
+As of the AsciiDoc Plugin version 0.31.14+, Asciidoctor Diagram is no longer included in the plugin as default as it adds approximately 15 MB to the download of the installation and each update.
+
+// see: diagram-placeholder.rb + AsciiDocDownloadNotificationProvider.java
+When the preview includes a diagram, the plugin shows an editor notification asking the user to download the necessary dependency.
+
+include::partial$download-dependencies.adoc[]
+
+[[temp-folder-asciidoctor,Temporary folder _.asciidoctor_ appearing in several places]]
+=== Temporary folder _.asciidoctor_ appearing in several places
+
+This is a folder that holds temporary files that are created, for example, for dynamic diagrams.
+
+When running in Asciidoctor's UNSAFE mode, the plugin creates a temporary folder outside the project.
+When running in any other mode, Asciidoctor needs to have this folder them relative to the document's folder.
+
+NOTE: Diagrams in the preview when running in any mode other than UNSAFE will only work starting with version 0.33.8.
+
+To avoid checking in these files, consider adding a file path to the ignore file of your version control system.
+
+See below for a _.gitignore_ file placed in the root of the project if the project uses Git as its version control system.
+
+..gitignore
+----
+**/.asciidoctor/images/*
+**/.asciidoctor/diagram/*
+----
+
+[[kroki,Kroki]]
+== Using Kroki
+
+Alternatively, the plugin supports {uri-kroki}[Kroki] instead of Asciidoctor Diagram to render diagrams.
+
+Use the plugin's settings to enable Kroki:
+
+image::kroki-settings.png[]
+
+When Kroki is enabled, the plugin sends the text diagrams to an instance of Kroki to display them as images in the preview.
+By default, it sends the diagrams to the free public cloud instance {uri-kroki}[kroki.io], but users can install Kroki on their own infrastructure.
+Once the custom instance is set up, update the server URL in the plugin's settings to point to it.
+
+=== Creating PDFs with Kroki diagrams
+
+include::partial$kroki-pdf.adoc[leveloffset=+2]
+
+=== Inline diagrams with Kroki
+
+When using the diagram option `inline`, users will need to set the attribute `allow-uri-read` in the plugin's settings to allow the download of the diagrams at render time.
+
+[WARNING]
+====
+As Kroki will in inline-mode fetch the diagrams synchronously while preparing the preview, a slow or unavailable internet connection to the user's Kroki server can slow down or break the preview.
+
+To avoid this, consider using `interactive` for Kroki diagrams as an alternative.
+See <<interative-vs-inlined>> and <<avoid-flicker>> for a discussion of tradeoffs.
+====
+
+== Using embedded Mermaid support
+
+As an experimental option in plugin version 0.38.1+, there's an embedded Mermaid support that is embedded in the plugin and will render Mermaid diagrams within the IDE without external helpers.
+
+To enable the support, toggle the checkbox menu:Enable built-in Mermaid Diagrams support[] in the plugin's settings.
+
+This is currently only supported for Mermaid diagrams, and only for the JCEF preview.
+
+== Advanced options
+
+=== PNG-only JavaFX preview
+
+// see: plantuml-png-patch.rb and kroki-extension.rb
+JavaFX has a problem displaying SVG files correctly.
+Therefore, the plugin displays all diagrams in the JavaFX preview as PNGs even when the user specifies SVG as the diagram format.
+
+When using IntelliJ 2020.2+ and plugin version 0.31.25+, the JCEF preview will show diagrams as SVGs when the user specifies SVG as the diagram format.
+
+[#interative-vs-inlined]
+=== Interactive vs inlined SVGs
+
+SVGs support interactions with the user such as hovering or links.
+This is only available when the user adds the option `interactive` or `inline` to diagrams or SVG images.
+Only when an SVG or diagram is inlined, the plugin will redirect clicks on links in the preview to local AsciiDoc files.
+See https://asciidoctor.org/docs/user-manual/#taming-svgs[section "`Taming SVGs`" in the Asciidoctor manual].
+
+[WARNING]
+====
+* When using existing SVGs images in Asciidoctor, use `**opts=**inline` to inline existing SVGs
+* When using Kroki, use `**opts=**inline` and set `allow-uri-read` in the plugin's settings
+* When using Asciidoctor Diagram, use `**svg-type=**inline` to inline generated SVG
+* As this requires SVG support in the preview, this only works with the JCEF preview.
+====
+
+The following PlantUML example renders a diagram in the preview showing a note "`Link to class-demo.adoc`" with a link.
+When the user clicks on the note, the plugin resolves the link `class-demo.html` to the workspace file `class-demo.adoc`.
+
+.Source code for diagram
+[source,asciidoc]
+-----
+// setting both opts and svg-type to make it work with both the Kroki plugin and the Asciidoctor Diagram plugin
+[plantuml,demo,svg,opts="inline",svg-type="inline"]
+----
+class Demo
+note right
+[[class-demo.html Link to class-demo.adoc]]
+end note
+----
+-----
+
+.Diagram as displayed in the preview
+[plantuml,demo,svg]
+----
+class Demo
+note right
+[[class-demo.html Link to class-demo.adoc]]
+end note
+----
+
+[NOTE]
+====
+In this documentation the image above is non-interactive, as the target link of the note would not resolve.
+====
+
+=== Using extensions to create links
+
+An extension with custom inline macro can create the links from an `+xref:[]+`.
+Use the JavaScript extension for example with Antora, and use the Ruby extension for IntelliJ as described in xref:features/advanced/asciidoctor-extensions.adoc[].
+
+.JavaScript extension to add a custom inline macro `+linkinpuml:...[]+`
+[source,javascript]
+----
+function register (registry, context) {
+  registry.inlineMacro('linkinpuml', function () {
+    this.matchFormat('short')
+    this.positionalAttributes(['content'])
+    this.process((parent, target, attrs) => {
+      const anchor = parent.applySubstitutions(attrs.content, ['macros'])
+      const [_, href, text] = anchor.match(/^<a href="(.+?)"[^>]*>(.*)<\/a>$/)
+      const prefix = attrs.prefix
+      return `[[${prefix ? [prefix, href].join('/') : href} ${text}]]`
+    })
+  })
+}
+
+module.exports.register = register
+----
+
+.Ruby extension to add a custom inline macro `+linkinpuml:...[]+`
+[source,ruby]
+----
+require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
+
+include ::Asciidoctor
+
+class LinkInPumlMacro < Extensions::InlineMacroProcessor
+  use_dsl
+  named :'link-in-puml'
+
+  def process parent, target, attrs
+
+    anchor = parent.apply_subs("xref:#{target}[]", [:macros])
+
+    # parse the anchor
+    matches = anchor.match(%r{^<a href="(?<href>.+?)"[^>]*>(?<text>.*)</a>$})
+
+    if matches
+      # matched, output the href
+      create_inline(parent, :quoted, matches[:href])
+    else
+      # no match, output the target as-is
+      create_inline(parent, :quoted, target)
+    end
+
+  end
+end
+----
+
+.Example PlantUML code which substitutes the macro to create a link
+[source,asciidoc]
+----
+[plantuml, format=svg, opts="inline",subs=+macros]
+....
+!include <C4/C4_Container>
+
+System(systemAlias, "Label", "Optional Description", $link="linkinpuml:target.adoc[]")
+....
+----
+
+[#avoid-flicker]
+=== Avoid flicker in preview on refresh
+
+Using inlined diagrams instead of interactive diagrams in the preview prevents flickering on refreshed content.
+If inlining should be used only for IntelliJ preview, consider a conditional attribute like in the following listing.
+
+[source,plantuml]
+-----
+\ifdef::env-idea[:plantuml-opts: inline]
+
+// setting both opts and svg-type to make it work with both Kroki and Asciidoctor Diagram
+[plantuml,demo,svg,opts="{plantuml-opts}",svg-type="{plantuml-opts}"]
+----
+...
+----
+-----

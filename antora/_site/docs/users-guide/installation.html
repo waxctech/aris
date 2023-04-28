@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Installing the plugin :: IntelliJ AsciiDoc Plugin</title>
+    <link rel="canonical" href="https://intellij-asciidoc-plugin.ahus1.de/docs/users-guide/installation.html">
+    <link rel="prev" href="quick-start.html">
+    <link rel="next" href="technical-writing/index.html">
+    <meta name="description" content="List of prerequisites and a step-by-step guide to install the plugin.">
+    <meta name="generator" content="Antora 3.1.3">
+<!-- https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="../antora/css/site.css">
+<link rel="stylesheet" href="../antora/css/search.css">
+<link rel="stylesheet" href="../antora/css/custom.css">
+<link rel="stylesheet" href="../antora/css/font-awesome.min.css">
+    <script>var uiRootPath = '../antora'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/"><img src="/assets/images/ad-logo.svg" height="40" width="40" class="logo" style="margin-right: 0.55rem" alt=""> IntelliJ AsciiDoc Plugin</a>
+            <div class="navbar-item search hide-for-print">
+                <div id="search-field" class="field has-filter">
+                    <input id="search-input" type="text" placeholder="Search the docs">
+                        <input checked style="display: none" type="checkbox" data-facet-filter="component:users-guide">
+                </div>
+            </div>
+        <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/docs/users-guide/quick-start.html">Quick-Start</a>
+        </div>
+          <div class="navbar-item">
+              <a href="/docs/users-guide/index.html">User’s Guide</a>
+          </div>
+          <div class="navbar-item">
+              <a href="/docs/contributors-guide/index.html">Contributor’s Guide</a>
+          </div>
+        <div class="navbar-item">
+          <a href="/docs/users-guide/faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="users-guide" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">User’s Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item is-current-path is-active" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="quick-start.html">Quick Start</a>
+  </li>
+  <li class="nav-item is-current-page is-active" data-depth="1">
+    <a class="nav-link" href="installation.html">Installing the plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="technical-writing/index.html">Setup for technical writing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/installing-intellij.html">Installing IntelliJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/starting-intellij-first-time.html">Starting IntelliJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/opening-the-first-project.html">Opening a project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/editing-an-asciidoc-file.html">Editing an AsciiDoc file</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/navigating-in-a-project.html">Navigating in a project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/searching-in-a-project.html">Searching in a project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/learning-asciidoc-syntax.html">Learning AsciiDoc syntax</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/using-tables-in-a-project.html">Using tables in AsciiDoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/git-integration.html">Collaborate using Git</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/preparing-a-repository.html">Preparing a repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/using-antora-with-intellij.html">Using Antora with IntelliJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/recommended-plugins.html">Recommended Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="technical-writing/getting-help.html">Getting help</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="antora/index.html">Decisions around Antora</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="antora/how-many-repositories.html">Structuring Antora repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="antora/generated-content-in-antora.html">Generated content and attachments</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="recommended-settings.html">Configuring the plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="features.html">Plugin&#8217;s Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="features/editor.html">Editing Content</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="features/keymap.html">Using Hotkeys</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="features/search.html">Searching content</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="features/preview.html">Previewing content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/preview/diagrams.html">Diagrams in the preview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/preview/javafx-preview.html">JavaFX Preview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/preview/jcef-preview.html">JCEF Preview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/preview/source-highlighting.html">Highlighting source code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/asciidoclet.html">Asciidoclet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/asciidoctorconfig-file.html">Asciidoctor Config File</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/asciidoctor-extensions.html">Asciidoctor Extensions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/conditional-rendering.html">Conditional Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/stylesheets.html">Custom stylesheets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/creating-docx.html">Creating DOCX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/creating-html.html">Creating HTML</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/creating-pdf.html">Creating PDF</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/frontmatter.html">Front matter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/grammar-checking.html">Checking the Grammar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/livetemplates.html">Live Templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/multimodule.html">Multi-module Projects</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/validation-in-ide.html">Validation in the IDE</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/validation-cicd.html">Validation in CI/CD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/pdf-non-latin-languages.html">PDFs with non-latin fonts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/privacy.html">Privacy for users</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/reformatting.html">Reformatting Content</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/spring-rest-docs.html">Spring REST Docs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/antora.html">Working with Antora</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="features/advanced/hugo.html">Working with Hugo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="faq.html">Frequently asked questions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/indent-missing-on-pasting.html">Indent missing when pasting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/jcef-no-proxy-support.html">Proxy issues JCEF preview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/javafx-initialization-stuck.html">JavaFX initialization stuck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/validation-for-asciidoc-files.html">Validation of files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/blurry-preview.html">JavaFX blurry preview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/errno-enoent.html">Error Message ENOENT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/troubleshooting-mps.html">Troubleshooting MPS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/diagrams-in-pdf-without-text.html">Problems with Diagrams in PDFs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq/could-not-find-dot-executable.html">Could not render diagrams with external helpers</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User’s Guide</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../contributors-guide/index.html">Contributor’s Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../contributors-guide/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">User’s Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">User’s Guide</a></li>
+    <li><a href="installation.html">Installing the plugin</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin/edit/main/doc/users-guide/modules/ROOT/pages/installation.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Installing the plugin</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>List of prerequisites and a step-by-step guide to install the plugin.</p>
+</div>
+<div class="paragraph">
+<p>For users already familiar with JetBrains IntelliJ, there&#8217;s a <a href="quick-start.html" class="xref page">Quick Start</a> documentation.
+For those new to IntelliJ, there is a <a href="technical-writing/index.html" class="xref page">Setup for technical writing</a> with a step-by-step-guide installing IntelliJ for technical writing.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use this plugin, the user of the plugin needs to have one of the IntelliJ family of IDEs like IntelliJ IDEA, GoLand, WebStorm or PyCharm installed.
+See below for <a href="#google-android-studio">Android Studio</a> and <a href="#intellij-mps">IntelliJ MPS</a>.</p>
+</div>
+<div class="paragraph">
+<p>All default download packages include the JetBrains Runtime 11, a pre-bundled OpenJDK runtime environment.
+Please use the pre-bundled JetBrains Runtime to run the IDE as it proves to be the most stable.</p>
+</div>
+<div class="paragraph">
+<p>Up to and including IntelliJ IDEA 2020.1 the pre-bundled OpenJDK includes JavaFX, which is required for a rich preview in 2020.1 and earlier.</p>
+</div>
+<div class="paragraph">
+<p>From IntelliJ 2020.2 onward the plugin supports the JCEF browser preview that is pre-bundled in the JetBrains runtime that pre-bundled with 2020.2 and later.
+It uses an embedded Chrome browser with up-to-date JavaScript and CSS handling.</p>
+</div>
+<div class="paragraph">
+<p>Starting with IDEA 2020.2, the JavaFX preview is only available after installing the plugin <a href="https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins" target="_blank" rel="noopener">&#8220;JavaFX for plugins&#8221;</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;ve already installed the IDE and the plugin, continue to section <a href="features.html" class="xref page">Features of the IntelliJ AsciiDoc plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you have the IDE installed already, continue to the next section <a href="#installplugin">Installing the plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you are looking for a free version of the IDE, choose IntelliJ IDEA Community edition.
+All other IDEs require a paid subscription.
+You can still download them and use them with a free, time-limited evaluation subscription.</p>
+</div>
+<div class="paragraph">
+<p>You can download them from the JetBrains homepage: <a href="https://www.jetbrains.com/idea/download/" class="bare" target="_blank" rel="noopener">https://www.jetbrains.com/idea/download/</a></p>
+</div>
+<div class="sect2">
+<h3 id="google-android-studio"><a class="anchor" href="#google-android-studio"></a>Google Android Studio</h3>
+<div class="paragraph">
+<p>If you use Android Studio, go ahead and <a href="#installplugin">install the plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>Afterwards:
+For Android Studio 4.0+, enable the <a href="features/preview/javafx-preview.html#choose-jdk" class="xref page">JavaFX preview by upgrading the bundled JDK</a>.
+For Android Studio 4.2+, enable the <a href="features/preview/jcef-preview.html#choose-jdk" class="xref page">JCEF preview by upgrading the bundled JDK</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="intellij-mps"><a class="anchor" href="#intellij-mps"></a>IntelliJ MPS</h3>
+<div class="paragraph">
+<p>If you use MPS, go ahead and <a href="#installplugin">install the plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>Support will be limited as MPS doesn&#8217;t have all the APIs the plugin can hook into.
+Have a look at <a href="faq/troubleshooting-mps.html" class="xref page">Troubleshooting problems when working with MPS</a>.
+Please open an issue on GitHub if you want to contribute to making MPS support better.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="more-information-on-jdks"><a class="anchor" href="#more-information-on-jdks"></a>More information on JDKs</h3>
+<div class="paragraph">
+<p>To use the JavaFX preview instead of the Swing preview, you&#8217;ll need to run IntelliJ with 64bit Java and JavaFX installed.
+Starting with IntelliJ 2020.3, the JetBrains platform requires JDK 11 to run.
+Oracle JDK installations include JavaFX, but can make the IDE unstable and crash.
+OpenJDK included in a Linux distribution usually doesn&#8217;t include JavaFX.</p>
+</div>
+<div class="paragraph">
+<p>The event more advanced JCEF preview will only work with JetBrains OpenJDK runtime.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, JetBrains OpenJDK pre-bundled with your IDE is recommended.</p>
+</div>
+<div class="paragraph">
+<p>Read more about choosing the JDK version of the IDE in the JetBrains knowledge base entry &#8220;<a href="https://intellij-support.jetbrains.com/hc/en-us/articles/206544879-Selecting-the-JDK-version-the-IDE-will-run-under">Selecting the JDK version the IDE will run under</a>&#8221;.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installplugin"><a class="anchor" href="#installplugin"></a>Installing the plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To activate the support for AsciiDoc in the IDE the plugin, you must install the plugin.
+There are several possibilities to install the plugin:</p>
+</div>
+<div class="paragraph">
+<p>Installing from JetBrains marketplace with an Internet Connection:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the <a href="#marketplace-via-settings">IDE&#8217;s settings from JetBrains marketplace</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If your IDE doesn&#8217;t have internet access configured:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Download the installation archive <a href="#download-install-from-disk">via your browser and install it from disk</a>.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="marketplace-via-settings"><a class="anchor" href="#marketplace-via-settings"></a>Installation via JetBrains Marketplace via the IDE&#8217;s settings</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Prerequisite</dt>
+<dd>
+<p>This requires a working internet connection in your IDE.</p>
+</dd>
+<dt class="hdlist1">Steps</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the IDE&#8217;s setting via <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Settings&#8230;&#8203;</b></span>.<br>
+This opens the following menu:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/install-from-marketplace.png" alt="Screenshot from settings menu when installing from JetBrains Marketplace">
+</div>
+<div class="title">Figure 1. Settings menu when installing from JetBrains Marketplace</div>
+</div>
+</li>
+<li>
+<p>Select <em>Plugins</em> from the settings tree.</p>
+</li>
+<li>
+<p>Select <em>Marketplace</em> tab if it is not selected yet.</p>
+</li>
+<li>
+<p>Search for 'asciidoc'.</p>
+</li>
+<li>
+<p>Click on the button <b class="button">Install</b>.</p>
+</li>
+<li>
+<p>Once the download is complete, press the button <b class="button">Apply</b> and restart the IDE if there is a prompt to do so.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Now that the installation is complete, every AsciiDoc file opens in an editor with syntax highlighting and a preview.
+Continue to section <a href="recommended-settings.html" class="xref page">Configuring the plugin</a> to configure a user&#8217;s environment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="download-install-from-disk"><a class="anchor" href="#download-install-from-disk"></a>Installation by manually download and install-from-disk</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Prerequisite</dt>
+<dd>
+<p>This requires a working internet connection when downloading the file with a browser.
+If the machine where the plugin should be installed doesn&#8217;t have direct internet access, download it on a different machine with Internet access and transfer the file internally via file transfer.</p>
+</dd>
+<dt class="hdlist1">Steps</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="https://plugins.jetbrains.com/plugin/7391-asciidoc/versions" target="_blank" rel="noopener">AsciiDoc plugin in the JetBrains Marketplace</a><br>
+This opens a web page similar to the following screenshot:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/web-page-marketplace.png" alt="JetBrains Marketplace showing AsciiDoc plugin">
+</div>
+<div class="title">Figure 2. JetBrains Marketplace</div>
+</div>
+</li>
+<li>
+<p>Choose the version tab if it isn&#8217;t pre-selected.</p>
+</li>
+<li>
+<p>Download the version compatible with your IDE&#8217;s version (usually the latest version if your IDE is up-to-date).</p>
+</li>
+<li>
+<p>Open the IDE&#8217;s setting via <span class="menuseq"><b class="menu">File</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Settings&#8230;&#8203;</b></span>.<br>
+This opens the following menu:</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/install-from-disk.png" alt="install from disk">
+</div>
+<div class="title">Figure 3. Settings menu when installing from disk</div>
+</div>
+</li>
+<li>
+<p>Select <em>Plugins</em> from the settings tree.</p>
+</li>
+<li>
+<p>Click on small gear icon.</p>
+</li>
+<li>
+<p>Choose menu item <em>Install Plugin from Disk&#8230;&#8203;</em>.</p>
+</li>
+<li>
+<p>Pick this ZIP-file downloaded in step 3.</p>
+</li>
+<li>
+<p>Restart the IDE.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Now that the installation is complete, every AsciiDoc file opens in an editor with syntax highlighting and a preview.
+Continue to section <a href="recommended-settings.html" class="xref page">Configuring the plugin</a> to configure a user&#8217;s environment.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="quick-start.html">Quick Start</a></span>
+  <span class="next"><a href="technical-writing/index.html">Setup for technical writing</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+    <p>This page was built using <a href="https://antora.org/" rel="nofollow">Antora</a> - © 2013-2021 Julien Viet, Erik Pragt, Alexander Schwartz and the individual contributors. Released under the Apache License, Version 2.0 - <a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin" rel="nofollow">GitHub</a> - <a href="/imprint" rel="nofollow">Imprint</a> - <a href="/privacy" rel="nofollow">Privacy</a></p>
+</footer>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" onclick="closeModal()">
+        <!--suppress HtmlRequiredAltAttribute as this will be set when selecting the image via JavaScript,
+        RequiredAttributes as src will be set by when selecting the image via JavaScript -->
+        <img id="imageinmodal">
+    </div>
+</div>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        // use overflowY = hidden to prevent the body from scrolling when modal is visible
+        // doesn't work with overscroll-behavior, as this would work only when the modal has a scrollbar
+        document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        document.getElementsByTagName("body")[0].style.overflowY = "auto";
+    }
+
+    document.querySelectorAll('.imageblock img').forEach(element => {
+        if (element.closest('a') === null) {
+            element.className += " lightbox";
+            element.addEventListener('click', evt => {
+                document.getElementById("imageinmodal").setAttribute("src", evt.currentTarget.getAttribute("src"))
+                document.getElementById("imageinmodal").setAttribute("alt", evt.currentTarget.getAttribute("alt"))
+                openModal();
+            })
+        }
+    });
+</script>
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        padding-top: 5vh;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        backdrop-filter: blur(3px);
+        background-color: rgba(30, 30, 30, 0.8);
+    }
+    img.lightbox {
+        cursor: pointer;
+    }
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-height: 90vh;
+        cursor: pointer;
+    }
+
+    .modal-content img {
+        width: auto;
+        height: auto;
+        max-width: 90vw;
+        max-height: 90vh;
+        min-width: 90vw;
+        min-height: 90vh;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        object-fit: contain;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<script src="../antora/js/os-switcher.js"></script>
+<script>
+    const navbarEl = document.getElementsByClassName("navbar")[0]
+    const toolbarEl = document.getElementsByClassName("toolbar")[0]
+    let NAVBAR_HEIGHT
+    let horizon
+    let scrollFactor = 0
+    let whereYouStoppedScrolling = 0
+    let currentTranslate = 0
+    let currentStyle = ""
+
+    function upOrDown(lastY, currentY) {
+        if (currentY >= lastY) {
+            return goingDown(currentY)
+        }
+        return goingUp(currentY)
+    }
+
+    function goingDown(currentY) {
+        whereYouStoppedScrolling = currentY
+
+        if (currentY > horizon) {
+            horizon = currentY
+        }
+
+        translateHeader(currentY, false)
+    }
+
+    function goingUp(currentY) {
+        if (currentY < whereYouStoppedScrolling - NAVBAR_HEIGHT) {
+            horizon = currentY + NAVBAR_HEIGHT
+        }
+
+        translateHeader(currentY, true)
+    }
+
+    function constrainDelta(delta) {
+        return Math.max(0, Math.min(delta, NAVBAR_HEIGHT))
+    }
+
+    function translateHeader(currentY, upwards) {
+        let translateValue
+
+        // if I have scrolled down sufficiently, the navbar appears faster
+        if (currentY > NAVBAR_HEIGHT * 2) {
+            scrollFactor = 1
+        } else if (currentY > NAVBAR_HEIGHT) {
+            scrollFactor = (currentY - NAVBAR_HEIGHT) / NAVBAR_HEIGHT
+        } else {
+            scrollFactor = 0
+        }
+
+        if (upwards && currentTranslate === 0) {
+            translateValue = 0
+        } else {
+            const delta = constrainDelta(
+                    Math.abs(currentY - horizon) * (1 + scrollFactor)
+            )
+            translateValue = delta - NAVBAR_HEIGHT
+        }
+
+        if (window.innerWidth > 1024) {
+            translateValue = 0
+        } else if (document.getElementsByClassName("nav-container")[0].classList.contains("is-active")) {
+            translateValue = 0
+        }
+
+        if (!isNaN(translateValue)) {
+            let navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            if (translateValue === -NAVBAR_HEIGHT) {
+                navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            }
+            if (currentY <= NAVBAR_HEIGHT) {
+                navbarStyle = `transform: translateY(${translateValue}px);`
+            }
+            currentTranslate = translateValue
+            if (currentStyle !== navbarStyle) {
+                currentStyle = navbarStyle
+                navbarEl.setAttribute("style", navbarStyle)
+                toolbarEl.setAttribute("style", navbarStyle)
+            }
+        }
+    }
+
+    translateHeader(window.scrollY, false)
+
+    let ticking = false
+    let lastY = 0
+
+    window.addEventListener("scroll", function () {
+        if (NAVBAR_HEIGHT === undefined) {
+            // lazy initialization on first scroll
+            NAVBAR_HEIGHT =
+                    parseInt(window.getComputedStyle(navbarEl).height.replace("px", "")) +
+                    1
+            horizon = NAVBAR_HEIGHT
+        }
+        const currentY = window.scrollY
+
+        if (!ticking && window.requestAnimationFrame) {
+            window.requestAnimationFrame(function () {
+                upOrDown(lastY, currentY)
+                ticking = false
+                lastY = currentY
+            })
+        }
+
+        ticking = true
+    })
+
+    window.addEventListener('resize', function () {
+        NAVBAR_HEIGHT = undefined
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+
+    document.getElementsByClassName("nav-toggle")[0].addEventListener("click", function () {
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+</script>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '..'
+  window.antora.pagePath = '/users-guide/installation.html'
+</script>
+<script src="../antora/js/site.js"></script>
+<script src="../antora/js/vendor/lunr.js"></script>
+<script src="../antora/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../antora/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

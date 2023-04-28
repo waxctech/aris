@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Building and Running the plugin :: IntelliJ AsciiDoc Plugin</title>
+    <link rel="canonical" href="https://intellij-asciidoc-plugin.ahus1.de/docs/contributors-guide/coder/building-and-running.html">
+    <link rel="prev" href="setup-environment.html">
+    <link rel="next" href="intro-to-plugin-development.html">
+    <meta name="description" content="Use this to get started with developing the plugin.">
+    <meta name="generator" content="Antora 3.1.3">
+<!-- https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="../../antora/css/site.css">
+<link rel="stylesheet" href="../../antora/css/search.css">
+<link rel="stylesheet" href="../../antora/css/custom.css">
+<link rel="stylesheet" href="../../antora/css/font-awesome.min.css">
+    <script>var uiRootPath = '../../antora'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/"><img src="/assets/images/ad-logo.svg" height="40" width="40" class="logo" style="margin-right: 0.55rem" alt=""> IntelliJ AsciiDoc Plugin</a>
+            <div class="navbar-item search hide-for-print">
+                <div id="search-field" class="field has-filter">
+                    <input id="search-input" type="text" placeholder="Search the docs">
+                        <input checked style="display: none" type="checkbox" data-facet-filter="component:contributors-guide">
+                </div>
+            </div>
+        <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/docs/users-guide/quick-start.html">Quick-Start</a>
+        </div>
+          <div class="navbar-item">
+              <a href="/docs/users-guide/index.html">User’s Guide</a>
+          </div>
+          <div class="navbar-item">
+              <a href="/docs/contributors-guide/index.html">Contributor’s Guide</a>
+          </div>
+        <div class="navbar-item">
+          <a href="/docs/users-guide/faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="contributors-guide" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Contributor’s Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item is-current-path is-active" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Why contribute</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../contribute-as-a-user.html">Contribute as a user</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/write-a-review.html">Write a review</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/report-errors.html">Report Errors</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/join-discussion-on-github.html">Join the discussion on GitHub</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/subscribe-to-new-releases.html">Subscribe to new preview releases</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/installing-a-preview-release.html">Installing a preview release</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/add-eap-repository-to-ide.html">Using the Early Access repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user/upvote-intellij-issues.html">Upvote IDEA issues</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-path is-active" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../contribute-as-a-coder.html">Contribute as a coder</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setup-environment.html">Setup environment</a>
+  </li>
+  <li class="nav-item is-current-page is-active" data-depth="2">
+    <a class="nav-link" href="building-and-running.html">Building and running</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-to-plugin-development.html">Plugin development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="debugging-and-logging.html">Debugging and Logging</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lexing-and-parsing.html">Lexing and parsing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="inspections.html">Inspections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="preview.html">Rendering preview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="upgrading-asciidoctor.html">Upgrading Asciidoctor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="releasing-plugin.html">Releasing the plugin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../contribute-as-a-writer.html">Contribute as a writer</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docs/edit-documentation-content.html">Edit documentation content</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docs/change-documentation-theme.html">Changing the documentation theme</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docs/change-startpage.html">Changing the start page</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docs/writing-user-documentation.html">Writing user documentation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../contribute-as-a-sponsor.html">Contribute as a sponsor</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Contributor’s Guide</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Contributor’s Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../users-guide/index.html">User’s Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../users-guide/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../users-guide/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Contributor’s Guide</a></li>
+    <li><a href="../contribute-as-a-coder.html">Contribute as a coder</a></li>
+    <li><a href="building-and-running.html">Building and running</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin/edit/main/doc/contributors-guide/modules/ROOT/pages/coder/building-and-running.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Building and Running the plugin</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use this to get started with developing the plugin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="local-build"><a class="anchor" href="#local-build"></a>Local Build</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This plugin is built using Gradle.
+As this project includes the Gradle wrapper, developers don&#8217;t need to install Gradle.
+They need to install Java and make it available in the path or set environment variable <em>JAVA_HOME</em> the folder where they installed it.
+When building or running for the first time, the build-script downloads the community edition of IntelliJ automatically.</p>
+</div>
+<div class="paragraph">
+<p>To build this plugin, run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>./gradlew -Dfile.encoding=UTF-8 buildPlugin</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The ZIP file with plugin to distribute will be located in <code>build/distributions</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>plugin.xml</code> inside the archive will state version <code>0.0.1</code> unless the developer specifies an environment variable <code>VERSION</code> that holds a release number.
+This ensures that a locally built plugin will be overwritten by the JetBrains plugin update site.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running-the-development-version-locally"><a class="anchor" href="#running-the-development-version-locally"></a>Running the development version locally</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run the plugin for development, run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">./gradlew -Dfile.encoding=UTF-8 runIde</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To run all tests and the CheckStyle validations, run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">./gradlew -Dfile.encoding=UTF-8 check</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running-the-plugin-from-with-the-ide"><a class="anchor" href="#running-the-plugin-from-with-the-ide"></a>Running the plugin from with the IDE</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about"><a class="anchor" href="#about"></a>About</h3>
+<div class="paragraph">
+<p>Developers most likely want to do this for fast turnaround times when running single tests, and debugging both tests and the plugin itself.
+Use IntelliJ IDEA as an IDE for developing on this plugin.</p>
+</div>
+<div class="paragraph">
+<p>Developers can use the most recent version of the IDE.
+The <code>build.gradle</code> file specifies the minimum version for all users of the plugin, but when developing they are free to use a more recent version.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setup-tasks"><a class="anchor" href="#setup-tasks"></a>Setup Tasks</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Checkout the GitHub project and import it as a gradle project.</p>
+</li>
+<li>
+<p>Ensure to install the following plugins (the IDE should recommend installing them once it opens the project):</p>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">GrammarKit</dt>
+<dd>
+<p>Helps with highlighting and code completion in Grammar files (*.flex).</p>
+</dd>
+<dt class="hdlist1">PsiViewer</dt>
+<dd>
+<p>Helps to analyze the PSI (abstract syntax tree) created from the plugin in the IDE.</p>
+</dd>
+<dt class="hdlist1">CheckStyle</dt>
+<dd>
+<p>This project contains a ready-to-go CheckStyle configuration that will work both in the IDE and in gradle.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Go to <span class="menuseq"><b class="menu">Project Structure&#8230;&#8203;</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Project Setting</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Project</b></span>.</p>
+</li>
+<li>
+<p>Choose &#8220;Amazon Corretto 11&#8221; as <em>Project JDK</em><br>
+(use <b class="menuref">Add JDK</b> and <b class="menuref">Download JDK&#8230;&#8203;</b> if not already present).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-tests-from-the-ide"><a class="anchor" href="#running-tests-from-the-ide"></a>Running Tests from the IDE</h3>
+<div class="paragraph">
+<p>Running tests from the IDE might produce the error message &#8220;jarFiles is not set for PluginDescriptor&#8221;.
+To avoid this error message, set the following system properties when running tests from the IDE.
+When running tests from Gradle, this is added automatically:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>-Didea.force.use.core.classloader=true
+-Didea.use.core.classloader.for.plugin.path=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Still, when running via the IDE, the tests in <em>AsciiDocGrammarInspectionTest</em> fail with an <em>ExceptionInInitializerError</em> when loading language tool classes.
+Run these tests using the CLI command <em>gradlew check</em> as described above.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="validation-tasks"><a class="anchor" href="#validation-tasks"></a>Validation Tasks</h3>
+<div class="paragraph">
+<p>Perform these tasks to ensure that the setup is ready for development:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the test cases from <code>AsciiDocLexerTest.java</code> to see that running tests works in the setup.</p>
+</li>
+<li>
+<p>There are two ready-to-go run configurations checked in to git that run from the IDE:</p>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">buildPlugin</dt>
+<dd>
+<p>building the plugin as a ZIP-file that can then be installed locally into any JetBrains IDE</p>
+</dd>
+<dt class="hdlist1">runIde</dt>
+<dd>
+<p>runs an IntelliJ community edition with the AsciiDoc plugin enabled.
+This allows for debugging IntelliJ and the plugin.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="setup-environment.html">Setup environment</a></span>
+  <span class="next"><a href="intro-to-plugin-development.html">Plugin development</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+    <p>This page was built using <a href="https://antora.org/" rel="nofollow">Antora</a> - © 2013-2021 Julien Viet, Erik Pragt, Alexander Schwartz and the individual contributors. Released under the Apache License, Version 2.0 - <a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin" rel="nofollow">GitHub</a> - <a href="/imprint" rel="nofollow">Imprint</a> - <a href="/privacy" rel="nofollow">Privacy</a></p>
+</footer>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" onclick="closeModal()">
+        <!--suppress HtmlRequiredAltAttribute as this will be set when selecting the image via JavaScript,
+        RequiredAttributes as src will be set by when selecting the image via JavaScript -->
+        <img id="imageinmodal">
+    </div>
+</div>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        // use overflowY = hidden to prevent the body from scrolling when modal is visible
+        // doesn't work with overscroll-behavior, as this would work only when the modal has a scrollbar
+        document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        document.getElementsByTagName("body")[0].style.overflowY = "auto";
+    }
+
+    document.querySelectorAll('.imageblock img').forEach(element => {
+        if (element.closest('a') === null) {
+            element.className += " lightbox";
+            element.addEventListener('click', evt => {
+                document.getElementById("imageinmodal").setAttribute("src", evt.currentTarget.getAttribute("src"))
+                document.getElementById("imageinmodal").setAttribute("alt", evt.currentTarget.getAttribute("alt"))
+                openModal();
+            })
+        }
+    });
+</script>
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        padding-top: 5vh;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        backdrop-filter: blur(3px);
+        background-color: rgba(30, 30, 30, 0.8);
+    }
+    img.lightbox {
+        cursor: pointer;
+    }
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-height: 90vh;
+        cursor: pointer;
+    }
+
+    .modal-content img {
+        width: auto;
+        height: auto;
+        max-width: 90vw;
+        max-height: 90vh;
+        min-width: 90vw;
+        min-height: 90vh;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        object-fit: contain;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<script src="../../antora/js/os-switcher.js"></script>
+<script>
+    const navbarEl = document.getElementsByClassName("navbar")[0]
+    const toolbarEl = document.getElementsByClassName("toolbar")[0]
+    let NAVBAR_HEIGHT
+    let horizon
+    let scrollFactor = 0
+    let whereYouStoppedScrolling = 0
+    let currentTranslate = 0
+    let currentStyle = ""
+
+    function upOrDown(lastY, currentY) {
+        if (currentY >= lastY) {
+            return goingDown(currentY)
+        }
+        return goingUp(currentY)
+    }
+
+    function goingDown(currentY) {
+        whereYouStoppedScrolling = currentY
+
+        if (currentY > horizon) {
+            horizon = currentY
+        }
+
+        translateHeader(currentY, false)
+    }
+
+    function goingUp(currentY) {
+        if (currentY < whereYouStoppedScrolling - NAVBAR_HEIGHT) {
+            horizon = currentY + NAVBAR_HEIGHT
+        }
+
+        translateHeader(currentY, true)
+    }
+
+    function constrainDelta(delta) {
+        return Math.max(0, Math.min(delta, NAVBAR_HEIGHT))
+    }
+
+    function translateHeader(currentY, upwards) {
+        let translateValue
+
+        // if I have scrolled down sufficiently, the navbar appears faster
+        if (currentY > NAVBAR_HEIGHT * 2) {
+            scrollFactor = 1
+        } else if (currentY > NAVBAR_HEIGHT) {
+            scrollFactor = (currentY - NAVBAR_HEIGHT) / NAVBAR_HEIGHT
+        } else {
+            scrollFactor = 0
+        }
+
+        if (upwards && currentTranslate === 0) {
+            translateValue = 0
+        } else {
+            const delta = constrainDelta(
+                    Math.abs(currentY - horizon) * (1 + scrollFactor)
+            )
+            translateValue = delta - NAVBAR_HEIGHT
+        }
+
+        if (window.innerWidth > 1024) {
+            translateValue = 0
+        } else if (document.getElementsByClassName("nav-container")[0].classList.contains("is-active")) {
+            translateValue = 0
+        }
+
+        if (!isNaN(translateValue)) {
+            let navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            if (translateValue === -NAVBAR_HEIGHT) {
+                navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            }
+            if (currentY <= NAVBAR_HEIGHT) {
+                navbarStyle = `transform: translateY(${translateValue}px);`
+            }
+            currentTranslate = translateValue
+            if (currentStyle !== navbarStyle) {
+                currentStyle = navbarStyle
+                navbarEl.setAttribute("style", navbarStyle)
+                toolbarEl.setAttribute("style", navbarStyle)
+            }
+        }
+    }
+
+    translateHeader(window.scrollY, false)
+
+    let ticking = false
+    let lastY = 0
+
+    window.addEventListener("scroll", function () {
+        if (NAVBAR_HEIGHT === undefined) {
+            // lazy initialization on first scroll
+            NAVBAR_HEIGHT =
+                    parseInt(window.getComputedStyle(navbarEl).height.replace("px", "")) +
+                    1
+            horizon = NAVBAR_HEIGHT
+        }
+        const currentY = window.scrollY
+
+        if (!ticking && window.requestAnimationFrame) {
+            window.requestAnimationFrame(function () {
+                upOrDown(lastY, currentY)
+                ticking = false
+                lastY = currentY
+            })
+        }
+
+        ticking = true
+    })
+
+    window.addEventListener('resize', function () {
+        NAVBAR_HEIGHT = undefined
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+
+    document.getElementsByClassName("nav-toggle")[0].addEventListener("click", function () {
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+</script>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../..'
+  window.antora.pagePath = '/contributors-guide/coder/building-and-running.html'
+</script>
+<script src="../../antora/js/site.js"></script>
+<script src="../../antora/js/vendor/lunr.js"></script>
+<script src="../../antora/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../antora/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
