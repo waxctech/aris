@@ -31,3 +31,4 @@ replay_pid*
 build
 
 /antora/node_modules/
+/antora/.cache/

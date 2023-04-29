@@ -10,7 +10,7 @@ ifndef::env-site[]
 endif::[]
 
 The preview of the AsciiDoc plugin supports rendering the diagrams in the preview.
-Two different types of diagram renderer are supported: <<asciidoctor-diagram>> and <<kroki>>.
+Two different types of diagram renderer are supported: <<asciidoctor-diagram>> and <<>>.
 
 [[asciidoctor-diagram,Asciidoctor Diagram]]
 == Using Asciidoctor Diagram
@@ -48,6 +48,7 @@ See below for a _.gitignore_ file placed in the root of the project if the proje
 **/.asciidoctor/images/*
 **/.asciidoctor/diagram/*
 ----
+
 
 [[kroki,Kroki]]
 == Using Kroki
@@ -223,3 +224,4 @@ If inlining should be used only for IntelliJ preview, consider a conditional att
 ...
 ----
 -----
+

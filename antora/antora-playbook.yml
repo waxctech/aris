@@ -5,10 +5,10 @@ site:
   start_page: users-guide::index.adoc
 content:
   sources:
-    - url: https://github.com/waxctech/aris
+    - url: ../../aris
       start_paths:
-        - doc/users-guide
-        - doc/contributors-guide
+        - antora/doc/users-guide
+        - antora/doc/contributors-guide
       branches:
         - 'HEAD'
 

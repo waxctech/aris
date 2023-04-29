@@ -5,7 +5,7 @@ site:
   start_page: users-guide::index.adoc
 content:
   sources:
-    - url: ../asciidoctor-intellij-plugin
+    - url: ../../asciidoctor-intellij-plugin
       start_paths:
         - doc/users-guide
         - doc/contributors-guide
