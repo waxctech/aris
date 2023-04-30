@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
+
+<script
+        src="https://browser.sentry-cdn.com/6.2.5/bundle.min.js"
+        integrity="sha384-+0tgGyP4idWu9/NA6Jbmnj3SApxIg65/GR1zo3qSieRNyzmmDQ/5a1Yu6mfmUw+v"
+        crossorigin="anonymous"
+></script>
+
+<script>
+  Sentry.init({
+    dsn: "https://ad6d66fcd1704192b283e054a3e68ba8@o502663.ingest.sentry.io/5585225",
+    beforeSend(event, hint) {
+      // Check if it is an exception, and if so, show the report dialog
+      if (event.exception) {
+        Sentry.showReportDialog({ eventId: event.event_id, lang: 'en' });
+      }
+      return event;
+    },
+  });
+  Sentry.captureException("Page missing: location: " + window.location.href);
+</script>

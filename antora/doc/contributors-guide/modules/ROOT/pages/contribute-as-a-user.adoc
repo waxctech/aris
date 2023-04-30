@@ -1,0 +1,12 @@
+= Contribute as a user
+:description: There are several ways how to support the development of the plugin as a user of the plugin. \
+No programming skills required!
+
+{description}
+
+Read more on how to can help:
+
+include::partial$nav-user.adoc[]
+
+To give a financial contribution, continue to section _xref:contribute-as-a-sponsor.adoc[]_.
+

@@ -1,0 +1,48 @@
+site:
+    title: IntelliJ AsciiDoc Plugin
+    # the 404, site-map, and canonical urls are only generated when a url is defined
+    url: https://intellij-asciidoc-plugin.ahus1.de/docs
+    start_page: users-guide::index.adoc
+content:
+    sources:
+        -   url: ../../aris
+            start_paths:
+                - antora/doc/users-guide
+                - antora/doc/contributors-guide
+            branches:
+                - 'HEAD'
+
+antora:
+    extensions:
+        -   require: '@antora/lunr-extension'
+
+ui:
+    bundle:
+        url: _antora/ui-bundle.zip
+        snapshot: true
+    supplemental_files: _antora/supplemental_ui
+    output_dir: antora
+
+runtime:
+    fetch: true
+    cache_dir: ./.cache/antora
+    log:
+        failure_level: error
+
+output:
+    clean: true
+    dir: _site/docs
+
+# Global asciidoc attributes here, used across all versions of documentation
+asciidoc:
+    extensions:
+        - asciidoctor-kroki
+        # Antora will resolve extensions listed here that end with something that looks like a file name extension as files relative to the project's folder
+        # therefore append the slash
+        - asciidoctor-highlight.js/
+    attributes:
+        kroki-fetch-diagram: true
+        idprefix: ''
+        idseparator: '-'
+        source-highlighter: highlightjs-ext
+

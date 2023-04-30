@@ -1,0 +1,24 @@
+version: 1.0
+profile:
+  path: doc/asciidoc-inspection.xml
+exclude:
+  - name: All
+    paths:
+      - doc/qodana-baseline.sarif.json
+      - doc/.grazie.en.yaml
+      - doc/asciidoc-inspection.xml
+      - doc/contributors-guide/modules/ROOT/images
+      - doc/users-guide/modules/ROOT/images
+      - doc/users-guide/modules/ROOT/examples
+      - CHANGELOG.adoc
+      - README.adoc
+      - build.gradle
+      - buildLexer.xml
+      - settings.gradle
+      - .github
+      - config
+      - gradle
+      - gradlew
+      - gradlew.bat
+      - src
+      - testData

@@ -1,0 +1,44 @@
+= Previewing content
+:description: Per default, the preview is on the right side of a vertical split screen and shows the rendered contents of the editor.
+
+{description}
+
+== Overview
+
+By default, the preview is on the right side of a vertical split screen.
+Using the configuration, the user can change the split to horizontal, and change the position of the preview.
+
+The plugin uses https://github.com/asciidoctor/asciidoctorj[AsciidoctorJ] 2.x to render the preview.
+
+By default, the plugin runs Asciidoctor in mode _UNSAFE_, which is also the default when a user runs Asciidoctor from the command line.
+The user can change the behavior to other modes like _SAVE_, _SERVER_ and _SECURE_ in the plugin's settings.
+See section https://asciidoctor.org/docs/user-manual/#running-asciidoctor-securely[Running Asciidoctor securely in the Asciidoctor User Manual] for more information about this feature.
+
+When using the JCEF of the JavaFX preview and the safe mode setting _SAVE_, _SERVER_ or _SECURE_, remote content is no longer allowed in the preview.
+With this setting the plugin applies a Content Security Policy to prevent this (new in plugin version 0.32.32).
+
+When the user enters formulas using Asciidoctor's math support, the preview renders them using MathML.
+If the formula can't be parsed by MathML, the preview shows an error popup.
+
+When the user moves the cursor in the editor, the preview scrolls the text into the preview.
+
+When the user clicks on the text in the preview, the editor moves the cursor to the clicked text.
+This is accurate at block level, unfortunately not yet on the line or the character level.
+If the content of the preview is part of an included file, the editor opens the included file (new in plugin version 0.32.5).
+
+When the user clicks on an external URL, the preview opens it in an external browser.
+
+When the user clicks on a relative link within the project (usually a `\link:[]` reference), the preview opens the referenced file in a new editor.
+
+When the user right-clicks on an image, the editor shows a dialog to save the file to the local file system.
+For diagrams like PlantUML, it offers to save the files as PNG or SVG.
+Windows and Linux users have a dropdown menu for this.
+MacOS users need to type the extension for the target file name (`.svg` or `.png`)
+
+The user can zoom in and out of the preview by holding kbd:[Ctrl] and scrolling the mouse wheel up or down.
+Clicking the middle mouse button whilst holding kbd:[Ctrl] resets the zoom to 100%.
+
+== Advanced
+
+The preview can use custom stylesheets.
+See _xref:features/advanced/stylesheets.adoc[]_ for details.
