@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Validation in the IDE :: IntelliJ AsciiDoc Plugin</title>
+    <link rel="canonical" href="https://intellij-asciidoc-plugin.ahus1.de/docs/users-guide/features/advanced/validation-in-ide.html">
+    <link rel="prev" href="multimodule.html">
+    <link rel="next" href="validation-cicd.html">
+    <meta name="description" content="Validate a project or a set of files in one go.">
+    <meta name="generator" content="Antora 3.1.3">
+<!-- https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" href="../../../antora/css/site.css">
+<link rel="stylesheet" href="../../../antora/css/search.css">
+<link rel="stylesheet" href="../../../antora/css/custom.css">
+<link rel="stylesheet" href="../../../antora/css/font-awesome.min.css">
+    <script>var uiRootPath = '../../../antora'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/"><img src="/assets/images/ad-logo.svg" height="40" width="40" class="logo" style="margin-right: 0.55rem" alt=""> IntelliJ AsciiDoc Plugin</a>
+            <div class="navbar-item search hide-for-print">
+                <div id="search-field" class="field has-filter">
+                    <input id="search-input" type="text" placeholder="Search the docs">
+                        <input checked style="display: none" type="checkbox" data-facet-filter="component:users-guide">
+                </div>
+            </div>
+        <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="/docs/users-guide/quick-start.html">Quick-Start</a>
+        </div>
+          <div class="navbar-item">
+              <a href="/docs/users-guide/index.html">User’s Guide</a>
+          </div>
+          <div class="navbar-item">
+              <a href="/docs/contributors-guide/index.html">Contributor’s Guide</a>
+          </div>
+        <div class="navbar-item">
+          <a href="/docs/users-guide/faq.html">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="users-guide" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">User’s Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item is-current-path is-active" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../quick-start.html">Quick Start</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../installation.html">Installing the plugin</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../technical-writing/index.html">Setup for technical writing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/installing-intellij.html">Installing IntelliJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/starting-intellij-first-time.html">Starting IntelliJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/opening-the-first-project.html">Opening a project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/editing-an-asciidoc-file.html">Editing an AsciiDoc file</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/navigating-in-a-project.html">Navigating in a project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/searching-in-a-project.html">Searching in a project</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/learning-asciidoc-syntax.html">Learning AsciiDoc syntax</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/using-tables-in-a-project.html">Using tables in AsciiDoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/git-integration.html">Collaborate using Git</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/preparing-a-repository.html">Preparing a repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/using-antora-with-intellij.html">Using Antora with IntelliJ</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/recommended-plugins.html">Recommended Plugins</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../technical-writing/getting-help.html">Getting help</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../antora/index.html">Decisions around Antora</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../antora/how-many-repositories.html">Structuring Antora repositories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../antora/generated-content-in-antora.html">Generated content and attachments</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../recommended-settings.html">Configuring the plugin</a>
+  </li>
+  <li class="nav-item is-current-path is-active" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../features.html">Plugin&#8217;s Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../editor.html">Editing Content</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keymap.html">Using Hotkeys</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../search.html">Searching content</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../preview.html">Previewing content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../preview/diagrams.html">Diagrams in the preview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../preview/javafx-preview.html">JavaFX Preview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../preview/jcef-preview.html">JCEF Preview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../preview/source-highlighting.html">Highlighting source code</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-path is-active" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="asciidoclet.html">Asciidoclet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="asciidoctorconfig-file.html">Asciidoctor Config File</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="asciidoctor-extensions.html">Asciidoctor Extensions</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="conditional-rendering.html">Conditional Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="stylesheets.html">Custom stylesheets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="creating-docx.html">Creating DOCX</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="creating-html.html">Creating HTML</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="creating-pdf.html">Creating PDF</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="frontmatter.html">Front matter</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="grammar-checking.html">Checking the Grammar</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="livetemplates.html">Live Templates</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="multimodule.html">Multi-module Projects</a>
+  </li>
+  <li class="nav-item is-current-page is-active" data-depth="3">
+    <a class="nav-link" href="validation-in-ide.html">Validation in the IDE</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="validation-cicd.html">Validation in CI/CD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pdf-non-latin-languages.html">PDFs with non-latin fonts</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="privacy.html">Privacy for users</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="reformatting.html">Reformatting Content</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="spring-rest-docs.html">Spring REST Docs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="antora.html">Working with Antora</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="hugo.html">Working with Hugo</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../faq.html">Frequently asked questions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/indent-missing-on-pasting.html">Indent missing when pasting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/jcef-no-proxy-support.html">Proxy issues JCEF preview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/javafx-initialization-stuck.html">JavaFX initialization stuck</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/validation-for-asciidoc-files.html">Validation of files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/blurry-preview.html">JavaFX blurry preview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/errno-enoent.html">Error Message ENOENT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/troubleshooting-mps.html">Troubleshooting MPS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/diagrams-in-pdf-without-text.html">Problems with Diagrams in PDFs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../faq/could-not-find-dot-executable.html">Could not render diagrams with external helpers</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">User’s Guide</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../contributors-guide/index.html">Contributor’s Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../contributors-guide/index.html">default</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../index.html">User’s Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">User’s Guide</a></li>
+    <li><a href="../../features.html">Plugin&#8217;s Features</a></li>
+    <li>Advanced</li>
+    <li><a href="validation-in-ide.html">Validation in the IDE</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/mac/Repo/aris/antora/doc/users-guide/modules/ROOT/pages/features/advanced/validation-in-ide.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Validation in the IDE</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Validate a project or a set of files in one go.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-inspect-code-to-validate-asciidoc-content"><a class="anchor" href="#use-inspect-code-to-validate-asciidoc-content"></a>Use <em>Inspect Code</em> to validate AsciiDoc content</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When users write AsciiDoc content in the editor, the IDE will highlight problems in the editor.
+Different plugins will show different warnings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>AsciiDoc Plugin: shows, for example, broken images and deprecated syntax.</p>
+</li>
+<li>
+<p><a href="https://plugins.jetbrains.com/plugin/12175-grazie">Grazie</a> and <a href="https://plugins.jetbrains.com/plugin/16136-grazie-professional">Grazie Professional</a> plugins: show spelling, style and grammar problems.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To review problems in all files or a subset of files in a project, the IDE offers the functionality <em>Inspect Code</em>.</p>
+</div>
+<div class="paragraph">
+<p>The following paragraph provides the step-by-step instructions for this.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="running-the-inspection-for-a-project"><a class="anchor" href="#running-the-inspection-for-a-project"></a>Running the inspection for a project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As a pre-requisite when running grammar inspections in large projects, increase the memory of the IDE as the IDE might otherwise be slow, or stall due to the lack of memory.
+Choose menu item <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Change Memory Settings</b></span> and change this, for example, to 4096 MB.</p>
+</div>
+<div class="paragraph">
+<p>Then follow these steps to validate files in a project.
+Use the icon <span class="icon"><i class="fa fa-question"></i></span> to read the docs of the IDE to find out about additional functionality in each dialog.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select a folder in the project view with documents to inspect, for example, <em>doc</em>.</p>
+</li>
+<li>
+<p>Select the menu item <span class="menuseq"><b class="menu">Code</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Inspect Code&#8230;&#8203;</b></span>.</p>
+</li>
+<li>
+<p>In the pop-up window, the directory is preselected.
+Keep this selection, or choose a different scope or the whole project depending on where files should be inspected.</p>
+<div class="paragraph">
+<p>New in plugin version 0.37.55+: The plugin also adds two custom scopes: <em>Project files without Symlinks</em>, <em>AsciiDoc files</em> and <em>AsciiDoc files without Symlinks</em>, which are applied to the whole project.
+The scope without symlinks avoids validating a file multiple times with duplicate error messages.
+In this scope, it will only be validated once in its original location.
+While this avoids duplicate error messages, it might also hide error messages that are context dependent on the symlink location.</p>
+</div>
+</li>
+<li>
+<p>When running this for the first time, select <b class="menuref">Configure&#8230;&#8203;</b> to select which kind of checks to run.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/validation-ide/popup-validate-code-default.png" alt="popup validate code default">
+</div>
+</div>
+</li>
+<li>
+<p>To create a custom profile, use the gear-icon <span class="icon"><i class="fa fa-gear"></i></span> to duplicate the default inspection.
+For this example, after duplicating the default inspection, enter the name <em>AsciiDoc</em> and press <kbd>Enter</kbd>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/validation-ide/popup-inspection-profile-duplicate.png" alt="popup inspection profile duplicate">
+</div>
+</div>
+</li>
+<li>
+<p>Deselect all inspections except the AsciiDoc and Proofreading inspections to restrict the type of checks.
+Return here later to adjust the inspections to suit the project.
+After updates of IntelliJ or its plugins, revisit the profile to see if new inspections are available.
+Select <b class="button">OK</b> to return to the previous pop-up.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/validation-ide/popup-inspection-profile-customized.png" alt="popup inspection profile customized">
+</div>
+</div>
+</li>
+<li>
+<p>Select the <em>AsciiDoc</em> inspection profile and press <b class="button">Analyze</b>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/validation-ide/popup-validate-code-with-profile.png" alt="popup validate code with profile">
+</div>
+</div>
+</li>
+<li>
+<p>The IDE then shows a tool window with all problems found in the search.
+Depending on the size of the project and the inspections selected, the inspection might take some time.
+Use the icons on the left to re-run the analysis, expand or collapse all groups, navigate to the previous or next problem in the list, or change the inspection profile.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../../_images/validation-ide/problem-tool-window.png" alt="problem tool window">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="further-reading"><a class="anchor" href="#further-reading"></a>Further reading</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.jetbrains.com/help/idea/running-inspections.html">IntelliJ documentation on running inspections</a></p>
+</li>
+<li>
+<p><a href="validation-cicd.html" class="xref page">Running validation as part of CI/CD</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="multimodule.html">Multi-module Projects</a></span>
+  <span class="next"><a href="validation-cicd.html">Validation in CI/CD</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+    <p>This page was built using <a href="https://antora.org/" rel="nofollow">Antora</a> - © 2013-2021 Julien Viet, Erik Pragt, Alexander Schwartz and the individual contributors. Released under the Apache License, Version 2.0 - <a href="https://github.com/asciidoctor/asciidoctor-intellij-plugin" rel="nofollow">GitHub</a> - <a href="/imprint" rel="nofollow">Imprint</a> - <a href="/privacy" rel="nofollow">Privacy</a></p>
+</footer>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" onclick="closeModal()">
+        <!--suppress HtmlRequiredAltAttribute as this will be set when selecting the image via JavaScript,
+        RequiredAttributes as src will be set by when selecting the image via JavaScript -->
+        <img id="imageinmodal">
+    </div>
+</div>
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+        // use overflowY = hidden to prevent the body from scrolling when modal is visible
+        // doesn't work with overscroll-behavior, as this would work only when the modal has a scrollbar
+        document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+        document.getElementsByTagName("body")[0].style.overflowY = "auto";
+    }
+
+    document.querySelectorAll('.imageblock img').forEach(element => {
+        if (element.closest('a') === null) {
+            element.className += " lightbox";
+            element.addEventListener('click', evt => {
+                document.getElementById("imageinmodal").setAttribute("src", evt.currentTarget.getAttribute("src"))
+                document.getElementById("imageinmodal").setAttribute("alt", evt.currentTarget.getAttribute("alt"))
+                openModal();
+            })
+        }
+    });
+</script>
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        padding-top: 5vh;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        backdrop-filter: blur(3px);
+        background-color: rgba(30, 30, 30, 0.8);
+    }
+    img.lightbox {
+        cursor: pointer;
+    }
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 90%;
+        max-height: 90vh;
+        cursor: pointer;
+    }
+
+    .modal-content img {
+        width: auto;
+        height: auto;
+        max-width: 90vw;
+        max-height: 90vh;
+        min-width: 90vw;
+        min-height: 90vh;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        object-fit: contain;
+    }
+
+    /* The Close Button */
+    .close {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<script src="../../../antora/js/os-switcher.js"></script>
+<script>
+    const navbarEl = document.getElementsByClassName("navbar")[0]
+    const toolbarEl = document.getElementsByClassName("toolbar")[0]
+    let NAVBAR_HEIGHT
+    let horizon
+    let scrollFactor = 0
+    let whereYouStoppedScrolling = 0
+    let currentTranslate = 0
+    let currentStyle = ""
+
+    function upOrDown(lastY, currentY) {
+        if (currentY >= lastY) {
+            return goingDown(currentY)
+        }
+        return goingUp(currentY)
+    }
+
+    function goingDown(currentY) {
+        whereYouStoppedScrolling = currentY
+
+        if (currentY > horizon) {
+            horizon = currentY
+        }
+
+        translateHeader(currentY, false)
+    }
+
+    function goingUp(currentY) {
+        if (currentY < whereYouStoppedScrolling - NAVBAR_HEIGHT) {
+            horizon = currentY + NAVBAR_HEIGHT
+        }
+
+        translateHeader(currentY, true)
+    }
+
+    function constrainDelta(delta) {
+        return Math.max(0, Math.min(delta, NAVBAR_HEIGHT))
+    }
+
+    function translateHeader(currentY, upwards) {
+        let translateValue
+
+        // if I have scrolled down sufficiently, the navbar appears faster
+        if (currentY > NAVBAR_HEIGHT * 2) {
+            scrollFactor = 1
+        } else if (currentY > NAVBAR_HEIGHT) {
+            scrollFactor = (currentY - NAVBAR_HEIGHT) / NAVBAR_HEIGHT
+        } else {
+            scrollFactor = 0
+        }
+
+        if (upwards && currentTranslate === 0) {
+            translateValue = 0
+        } else {
+            const delta = constrainDelta(
+                    Math.abs(currentY - horizon) * (1 + scrollFactor)
+            )
+            translateValue = delta - NAVBAR_HEIGHT
+        }
+
+        if (window.innerWidth > 1024) {
+            translateValue = 0
+        } else if (document.getElementsByClassName("nav-container")[0].classList.contains("is-active")) {
+            translateValue = 0
+        }
+
+        if (!isNaN(translateValue)) {
+            let navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            if (translateValue === -NAVBAR_HEIGHT) {
+                navbarStyle = `transition: transform 0.5s ease-out; transform: translateY(${translateValue}px);`
+            }
+            if (currentY <= NAVBAR_HEIGHT) {
+                navbarStyle = `transform: translateY(${translateValue}px);`
+            }
+            currentTranslate = translateValue
+            if (currentStyle !== navbarStyle) {
+                currentStyle = navbarStyle
+                navbarEl.setAttribute("style", navbarStyle)
+                toolbarEl.setAttribute("style", navbarStyle)
+            }
+        }
+    }
+
+    translateHeader(window.scrollY, false)
+
+    let ticking = false
+    let lastY = 0
+
+    window.addEventListener("scroll", function () {
+        if (NAVBAR_HEIGHT === undefined) {
+            // lazy initialization on first scroll
+            NAVBAR_HEIGHT =
+                    parseInt(window.getComputedStyle(navbarEl).height.replace("px", "")) +
+                    1
+            horizon = NAVBAR_HEIGHT
+        }
+        const currentY = window.scrollY
+
+        if (!ticking && window.requestAnimationFrame) {
+            window.requestAnimationFrame(function () {
+                upOrDown(lastY, currentY)
+                ticking = false
+                lastY = currentY
+            })
+        }
+
+        ticking = true
+    })
+
+    window.addEventListener('resize', function () {
+        NAVBAR_HEIGHT = undefined
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+
+    document.getElementsByClassName("nav-toggle")[0].addEventListener("click", function () {
+        const currentY = 0
+        upOrDown(lastY, currentY)
+        lastY = currentY
+        return true
+    })
+
+</script>
+<script>
+  window.antora = window.antora || {}
+  window.antora.basePath = '../../..'
+  window.antora.pagePath = '/users-guide/features/advanced/validation-in-ide.html'
+</script>
+<script src="../../../antora/js/site.js"></script>
+<script src="../../../antora/js/vendor/lunr.js"></script>
+<script src="../../../antora/js/search-ui.js" id="search-ui-script" data-site-root-path="../../.." data-snippet-length="100" data-stylesheet="../../../antora/css/search.css"></script>
+<script async src="../../../search-index.js"></script>
+  </body>
+</html>
