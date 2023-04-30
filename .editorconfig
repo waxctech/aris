@@ -1,7 +1,7 @@
 root = true
 
 # The following settings match to AsciiDoc content by its filename
-[{*.ad,*.adoc,*.asciidoc,.asciidoctorconfig}]
+[*]
 # Ensure that content is UTF-8 encoded
 charset = utf-8
 # No line should contain trailing whitespace
@@ -10,4 +10,8 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 max_line_length = 120
+
+indent_size = 4
+
+end_of_line = lf
 

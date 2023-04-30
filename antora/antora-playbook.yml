@@ -7,8 +7,8 @@ content:
   sources:
     - url: ../../aris
       start_paths:
-        - antora/doc/users-guide
-        - antora/doc/contributors-guide
+          - antora/doc/users-guide
+          - antora/doc/contributors-guide
       branches:
         - 'HEAD'
 
