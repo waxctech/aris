@@ -31,7 +31,7 @@ runtime:
 
 output:
     clean: true
-    dir: _site/docs
+    dir: ../docs
 
 # Global asciidoc attributes here, used across all versions of documentation
 asciidoc:
