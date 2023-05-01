@@ -1,4 +1,4 @@
-* xref:index.adoc[topic]
-** xref:subtopic/index.adoc[subtopic]
+* xref:index.adoc[Topic]
+** xref:subtopic/index.adoc[Asciidoc Template]
 
 

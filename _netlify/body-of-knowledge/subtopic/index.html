@@ -59,10 +59,10 @@
 <ul class="nav-list">
   <li class="nav-item is-current-path is-active" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../index.html">topic</a>
+    <a class="nav-link" href="../index.html">Topic</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page is-active" data-depth="2">
-    <a class="nav-link" href="index.html">subtopic</a>
+    <a class="nav-link" href="index.html">Asciidoc Template</a>
   </li>
 </ul>
   </li>
@@ -97,8 +97,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Body of Knowledge</a></li>
-    <li><a href="../index.html">topic</a></li>
-    <li><a href="index.html">subtopic</a></li>
+    <li><a href="../index.html">Topic</a></li>
+    <li><a href="index.html">Asciidoc Template</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="file:///Users/mac/Repo/aris/antora/doc/body-of-knowledge/modules/ROOT/pages/subtopic/index.adoc">Edit this Page</a></div>
@@ -119,6 +119,7 @@
 </li>
 <li><a href="#first-level-heading-2">First level heading</a></li>
 <li><a href="#first-level-heading-3">First level heading</a></li>
+<li><a href="#diagramming">Diagramming</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -288,7 +289,48 @@ There are five admonition labels: Tip, Note, Important, Caution and Warning.
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a link to the <a href="https://docs.asciidoctor.org/home/">Asciidoctor documentation</a>.
-This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">that links this text to the AsciiDoc Syntax Quick Reference</a>.</p>
+This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">that links this text to the AsciiDoc Syntax Quick Reference</a>.
+== MathJax notation</p>
+</div>
+  <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+</div>
+</div>
+<div class="sect1">
+<h2 id="diagramming"><a class="anchor" href="#diagramming"></a>Diagramming</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/abcd-flowchart-0678675d0486c6be62dfdedffbec86639187f2fa.svg" alt="abcd-flowchart">
+</div>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-765f836a65b7b42ed9d1f923b93feedbad41d649.svg" alt="Diagram">
+</div>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-f23c073fd9eaa289da443cd1bf7441173f045de4.svg" alt="Diagram">
+</div>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diagram-classes-8217fdeb933886c67408a54e411926f644a2879d.png" alt="diagram-classes">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://excalidraw.com/">excalidraw online drawing tool</a></p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-a524ee111cb715eb4c6ee56691d9d94af4897c36.svg" alt="Diagram">
+</div>
 </div>
 </div>
 </div>
@@ -299,14 +341,14 @@ This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/la
 </div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../index.html">topic</a></span>
+  <span class="prev"><a href="../index.html">Topic</a></span>
 </nav>
 </article>
   </div>
 </main>
 </div>
 <footer class="footer">
-    <p>This page was built using <a href="https://antora.org/" rel="nofollow">Antora</a> - © 2023 WAXC Tech. Released under the Apache License, Version 2.0 - <a href="https://github.com/waxctech/aris" rel="nofollow">GitHub</a> - <a href="/imprint" rel="nofollow">Imprint</a> - <a href="/privacy" rel="nofollow">Privacy</a></p>
+    <p>This page was built using <a href="https://antora.org/" rel="nofollow">Antora</a> - © 2023 WAXC Tech. Released under the Apache License, Version 2.0 - <a href="https://github.com/waxctech/aris" rel="nofollow">GitHub</a> - <a href="" rel="nofollow">Imprint</a> - <a href="" rel="nofollow">Privacy</a></p>
 </footer>
 <div id="myModal" class="modal">
     <span class="close cursor" onclick="closeModal()">&times;</span>

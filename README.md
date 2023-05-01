@@ -1,2 +1,0 @@
-# aris
-Body of Knowledge
