@@ -1,5 +1,7 @@
-* xref:index.adoc[Topic]
+
+* xref:definitions.adoc[Definitions]
+* xref:bibliography.adoc[Bibliography]
 ** xref:subtopic/index.adoc[Asciidoc Template]
-** xref:definitions.adoc[Definitions]
+
 
 

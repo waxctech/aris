@@ -6,7 +6,7 @@
 
 == Standard Body of Knowledge
 
-[cols="2,2,10a"]
+[cols="2,2,5a"]
 |===
 |Book of Knowledge |Organization |Knowledge Area
 
@@ -69,7 +69,7 @@
 . Elicitation & Collaboration
 . Requirement Life Cycle Management
 . Strategy Analysis
-. Requirement Analysis & Design Definition
+. Requirement Analysis & Design
 . Solution Evaluation
 
 |Business Architecture (BIZBOK)
