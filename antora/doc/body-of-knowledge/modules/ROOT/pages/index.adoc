@@ -2,8 +2,6 @@
 :navtitle: Body of Knowledge
 :description: gather all common body of knowledge related to software engineering.
 
-
-
 {description}
 testing
 
@@ -18,7 +16,6 @@ graph TD;
     C-->D;
 ....
 
-
 [ditaa]
 ----
               +-------------+
@@ -32,7 +29,8 @@ graph TD;
  |  adoc  |-->+ asciidoctor +    | HTML + image  |
  +--------+   +-------------+    \---------------/
 ----
-[plantuml, target=diagram-classes, format=png]
+
+[plantuml,target=diagram-classes,format=png]
 ....
 class BlockProcessor
 class DiagramBlock
@@ -753,6 +751,7 @@ strict graph {
 ....
 
 My Maths
+
 ++++
   <script>
   MathJax = {

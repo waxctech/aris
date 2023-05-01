@@ -33,7 +33,7 @@ runtime:
 
 output:
     clean: true
-    dir: ../docs
+    dir: ../_netlify
 
 # Global asciidoc attributes here, used across all versions of documentation
 asciidoc:
