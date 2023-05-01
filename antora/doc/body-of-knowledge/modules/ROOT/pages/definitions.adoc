@@ -1,0 +1,9 @@
+= Definitions
+:navtitle:definitions
+
+=== Definition
+https://pascal.computer.org/[SEVOCAB]
+[%header,format=csv]
+|===
+include::definitions.csv[]
+|===

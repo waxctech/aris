@@ -89,10 +89,4 @@
 . Products & Services
 |===
 
-=== Definition
-https://pascal.computer.org/[SEVOCAB]
-[%header,format=csv]
-|===
-include::definitions.csv[]
-|===
 
