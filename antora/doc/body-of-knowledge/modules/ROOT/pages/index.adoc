@@ -6,7 +6,7 @@
 
 == Standard Body of Knowledge
 
-[cols="2,2,5a"]
+[cols="2,2,10a"]
 |===
 |Book of Knowledge |Organization |Knowledge Area
 
