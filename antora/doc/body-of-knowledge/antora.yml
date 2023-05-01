@@ -1,0 +1,11 @@
+title: Body of Knowledge
+name: body-of-knowledge
+version: ~
+nav:
+  - modules/ROOT/nav.adoc
+asciidoc:
+  attributes:
+    page-pagination: ''
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'

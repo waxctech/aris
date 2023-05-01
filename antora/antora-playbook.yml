@@ -1,14 +1,15 @@
 site:
     title: Project Aris
     # the 404, site-map, and canonical urls are only generated when a url is defined
-    url: https://waxctech.github.io/aris/
-    start_page: users-guide::index.adoc
+    url: https://docs.waxc.tech
+    start_page: body-of-knowledge::index.adoc
 content:
     sources:
         -   url: ../../aris
             start_paths:
                 - antora/doc/users-guide
                 - antora/doc/contributors-guide
+                - antora/doc/body-of-knowledge
             branches:
                 - 'HEAD'
 
@@ -21,6 +22,7 @@ ui:
         url: _antora/ui-bundle.zip
         snapshot: true
     supplemental_files: _antora/supplemental_ui
+
     output_dir: antora
 
 runtime:

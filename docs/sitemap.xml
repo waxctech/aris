@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
-<loc>https://waxctech.github.io/aris/sitemap-contributors-guide.xml</loc>
+<loc>https://docs.waxc.tech/sitemap-body-of-knowledge.xml</loc>
 </sitemap>
 <sitemap>
-<loc>https://waxctech.github.io/aris/sitemap-users-guide.xml</loc>
+<loc>https://docs.waxc.tech/sitemap-contributors-guide.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://docs.waxc.tech/sitemap-users-guide.xml</loc>
 </sitemap>
 </sitemapindex>

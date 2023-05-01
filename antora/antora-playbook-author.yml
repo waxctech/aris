@@ -1,7 +1,7 @@
 site:
     title: My Title
     # the 404, site-map, and canonical urls are only generated when a url is defined
-    url: https://waxctech.github.io/aris/
+    url: https://docs.waxc.tech
     start_page: users-guide::index.adoc
 content:
     sources:
