@@ -19,16 +19,16 @@ description: >- # this means to ignore newlines until "baseurl:"
   Body of Knowledge.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://docs.waxc.tech" # the base hostname & protocol for your site, e.g. http://example.com
-twitter:
-  username: "waxcio"
+#twitter:
+  #username: "waxcio"
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/ahus1de"
+    #- label: "Twitter"
+    #  icon: "fab fa-fw fa-twitter-square"
+    #  url: "https://twitter.com/ahus1de"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/asciidoctor/asciidoctor-intellij-plugin"
+      url: "https://github.com/waxctech/aris"
     - label: "Imprint"
       icon: "fas fa-balance-scale-right"
       url: "/imprint"

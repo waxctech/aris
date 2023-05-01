@@ -1,11 +1,11 @@
 {
-    "name": "intellij-asciidoc-plugin-docs",
+    "name": "waxc-tech-docs",
     "version": "1.0.0",
-    "description": "IntelliJ AsciiDoc Plugin Documentation",
-    "author": "Alexander Schwartz",
+    "description": "WAXC Tech Documentation",
+    "author": "Manchi L.",
     "private": true,
     "scripts": {
-        "author": "antora --stacktrace --redirect-facility netlify antora-playbook-author.yml",
+        "author": "antora --stacktrace --redirect-facility netlify antora-playbook.yml",
         "build": "antora --stacktrace --redirect-facility netlify antora-playbook.yml",
         "serve": "http-server _site -c-1 -p 5000 -a 127.0.0.1"
     },

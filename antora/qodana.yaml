@@ -7,9 +7,8 @@ exclude:
       - doc/qodana-baseline.sarif.json
       - doc/.grazie.en.yaml
       - doc/asciidoc-inspection.xml
-      - doc/contributors-guide/modules/ROOT/images
-      - doc/users-guide/modules/ROOT/images
-      - doc/users-guide/modules/ROOT/examples
+      - doc/body-of-knowledge/modules/ROOT/images
+      - doc/body-of-knowledge/modules/ROOT/examples
       - CHANGELOG.adoc
       - README.adoc
       - build.gradle

@@ -1,9 +1,7 @@
 # avoid alias site to be indexed by search engine
-https://intellij-asciidoc-plugin.netlify.app/* https://intellij-asciidoc-plugin.ahus1.de/:splat 301!
+https://docs.waxc.tec/* https://docs.waxc.tec/:splat 301!
 
 # this is how antora links the docs, let's do the same
-/docs/users-guide/ /docs/users-guide/index.html 301!
-/docs/contributors-guide/ /docs/contributors-guide/index.html 301!
-/users-guide/* /docs/users-guide/:splat 301!
-/contributors-guide/* /docs/contributors-guide/:splat 301!
+/docs/body-of-knowledge/ /docs/body-of-knowledge/index.html 301!
+/body-of-knowledge/* /docs/body-of-knowledge/:splat 301!
 
