@@ -1,0 +1,21 @@
+= Bibliography
+:navtitle: Bibliography
+:description: Bibliography
+
+https://zbib.org/[Bibliography Search]
+
+The IEEE citation style is based on the Chicago Manual of Style and uses a numeric system for in-text citations, where a number in brackets is used to refer to the corresponding entry in the reference list. The reference list is organized numerically and includes the author's name, title of the paper, publication title, volume, page numbers, and publication year.
+
+== Example
+Parnas, David Lorge, et al. Software Fundamentals: Collected Papers by David L. Parnas. Addison-Wesley, 2001. <<1>>.
+
+
+[bibliography]
+== References
+
+* [[[1]] Parnas, David Lorge, et al. Software Fundamentals: Collected Papers by David L. Parnas. Addison-Wesley, 2001.
+
+== Forum
+https://antora.zulipchat.com/[Antora Zulip]
+
+

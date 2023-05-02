@@ -1,7 +1,9 @@
 
-* xref:definitions.adoc[Definitions]
-* xref:bibliography.adoc[Bibliography]
-** xref:subtopic/index.adoc[Asciidoc Template]
+* xref:appendix/definitions.adoc[Definitions]
+* xref:appendix/bibliography.adoc[Bibliography]
+** xref:toolchain/asciidoc.adoc[Asciidoc]
+** xref:toolchain/diagramming.adoc[Diagramming]
+** xref:toolchain/plantuml.adoc[Plantuml]
 
 
 

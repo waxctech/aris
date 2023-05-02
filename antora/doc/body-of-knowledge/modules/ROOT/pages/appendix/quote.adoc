@@ -1,0 +1,14 @@
+= Collection from Quotes
+:navtitle: qoutes
+:toc:
+:icons: font
+
+[quote, - Stephen Hawking]
+----
+"The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge."
+----
+
+[quote, African proverb]
+____
+"If you want to go fast, go alone. If you want to go far, go together."
+____
