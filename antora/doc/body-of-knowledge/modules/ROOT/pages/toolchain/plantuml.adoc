@@ -31,7 +31,54 @@ Rel(banking_system, mainframe, "Uses")
 @enduml
 ....
 
-== C4 Container View - shows application, service, microservice, etc
+== C4 System Landscape View
+[plantuml]
+....
+@startuml
+!include <C4/C4_Container>
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+'LAYOUT_TOP_DOWN()
+'LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+
+title System Landscape diagram for Big Bank plc
+
+Person(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
+
+Enterprise_Boundary(c0, "Big Bank plc") {
+System(banking_system, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+
+    System_Ext(atm, "ATM", "Allows customers to withdraw cash.")
+    System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+
+    System_Ext(mainframe, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+    Person_Ext(customer_service, "Customer Service Staff", "Customer service staff within the bank.")
+    Person_Ext(back_office, "Back Office Staff", "Administration and support staff within the bank.")
+}
+
+Rel_Neighbor(customer, banking_system, "Uses")
+Rel_R(customer, atm, "Withdraws cash using")
+Rel_Back(customer, mail_system, "Sends e-mails to")
+
+Rel_R(customer, customer_service, "Asks questions to", "Telephone")
+
+Rel_D(banking_system, mail_system, "Sends e-mail using")
+Rel_R(atm, mainframe, "Uses")
+Rel_R(banking_system, mainframe, "Uses")
+Rel_D(customer_service, mainframe, "Uses")
+Rel_U(back_office, mainframe, "Uses")
+
+Lay_D(atm, banking_system)
+
+Lay_D(atm, customer)
+Lay_U(mail_system, customer)
+@enduml
+....
+
+== C4 Container View (applications, services level)
 [plantuml]
 ....
 @startuml
@@ -81,110 +128,7 @@ Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
 @enduml
 ....
 
-== C4 Component View
-[plantuml]
-....
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
-' uncomment the following line and comment the first to use locally
-' !include C4_Context.puml
-
-LAYOUT_WITH_LEGEND()
-
-title Component diagram for Internet Banking System - API Application
-
-Container(spa, "Single Page Application", "javascript and angular", "Provides all the internet banking functionality to customers via their web browser.")
-Container(ma, "Mobile App", "Xamarin", "Provides a limited subset ot the internet banking functionality to customers via their mobile mobile device.")
-ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
-System_Ext(mbs, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
-
-Container_Boundary(api, "API Application") {
-Component(sign, "Sign In Controller", "MVC Rest Controlle", "Allows users to sign in to the internet banking system")
-Component(accounts, "Accounts Summary Controller", "MVC Rest Controller", "Provides customers with a summary of their bank accounts")
-Component(security, "Security Component", "Spring Bean", "Provides functionality related to singing in, changing passwords, etc.")
-Component(mbsfacade, "Mainframe Banking System Facade", "Spring Bean", "A facade onto the mainframe banking system.")
-
-    Rel(sign, security, "Uses")
-    Rel(accounts, mbsfacade, "Uses")
-    Rel(security, db, "Read & write to", "JDBC")
-    Rel(mbsfacade, mbs, "Uses", "XML/HTTPS")
-}
-
-Rel(spa, sign, "Uses", "JSON/HTTPS")
-Rel(spa, accounts, "Uses", "JSON/HTTPS")
-
-Rel(ma, sign, "Uses", "JSON/HTTPS")
-Rel(ma, accounts, "Uses", "JSON/HTTPS")
-@enduml
-....
-
-== C4 System Landscape View
-[plantuml]
-....
-@startuml
-!include <C4/C4_Container>
-' uncomment the following line and comment the first to use locally
-' !include C4_Context.puml
-
-'LAYOUT_TOP_DOWN()
-'LAYOUT_AS_SKETCH()
-LAYOUT_WITH_LEGEND()
-
-title System Landscape diagram for Big Bank plc
-
-Person(customer, "Personal Banking Customer", "A customer of the bank, with personal bank accounts.")
-
-Enterprise_Boundary(c0, "Big Bank plc") {
-System(banking_system, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
-
-    System_Ext(atm, "ATM", "Allows customers to withdraw cash.")
-    System_Ext(mail_system, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-
-    System_Ext(mainframe, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
-
-    Person_Ext(customer_service, "Customer Service Staff", "Customer service staff within the bank.")
-    Person_Ext(back_office, "Back Office Staff", "Administration and support staff within the bank.")
-}
-
-Rel_Neighbor(customer, banking_system, "Uses")
-Rel_R(customer, atm, "Withdraws cash using")
-Rel_Back(customer, mail_system, "Sends e-mails to")
-
-Rel_R(customer, customer_service, "Asks questions to", "Telephone")
-
-Rel_D(banking_system, mail_system, "Sends e-mail using")
-Rel_R(atm, mainframe, "Uses")
-Rel_R(banking_system, mainframe, "Uses")
-Rel_D(customer_service, mainframe, "Uses")
-Rel_U(back_office, mainframe, "Uses")
-
-Lay_D(atm, banking_system)
-
-Lay_D(atm, customer)
-Lay_U(mail_system, customer)
-@enduml
-....
-
-== C4 Dynamic View
-[plantuml]
-....
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
-LAYOUT_WITH_LEGEND()
-
-ContainerDb(c4, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
-Container(c1, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.")
-Container_Boundary(b, "API Application") {
-Component(c3, "Security Component", "Spring Bean", "Provides functionality Related to signing in, changing passwords, etc.")
-Component(c2, "Sign In Controller", "Spring MVC Rest Controller", "Allows users to sign in to the Internet Banking System.")
-}
-Rel_R(c1, c2, "Submits credentials to", "JSON/HTTPS")
-Rel(c2, c3, "Calls isAuthenticated() on")
-Rel_R(c3, c4, "select * from users where username = ?", "JDBC")
-@enduml
-....
-
-== C4 Deployment with Detail View
+== C4 Container View (Deployment with Detail View)
 [plantuml]
 ....
 @startuml
@@ -299,6 +243,62 @@ Rel(audit_service, audit_store, "Stores events in")
 Lay_R(reporting_service, audit_service)
 
 SHOW_LEGEND()
+@enduml
+....
+
+== C4 Component View
+[plantuml]
+....
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Internet Banking System - API Application
+
+Container(spa, "Single Page Application", "javascript and angular", "Provides all the internet banking functionality to customers via their web browser.")
+Container(ma, "Mobile App", "Xamarin", "Provides a limited subset ot the internet banking functionality to customers via their mobile mobile device.")
+ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+System_Ext(mbs, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+Container_Boundary(api, "API Application") {
+Component(sign, "Sign In Controller", "MVC Rest Controlle", "Allows users to sign in to the internet banking system")
+Component(accounts, "Accounts Summary Controller", "MVC Rest Controller", "Provides customers with a summary of their bank accounts")
+Component(security, "Security Component", "Spring Bean", "Provides functionality related to singing in, changing passwords, etc.")
+Component(mbsfacade, "Mainframe Banking System Facade", "Spring Bean", "A facade onto the mainframe banking system.")
+
+    Rel(sign, security, "Uses")
+    Rel(accounts, mbsfacade, "Uses")
+    Rel(security, db, "Read & write to", "JDBC")
+    Rel(mbsfacade, mbs, "Uses", "XML/HTTPS")
+}
+
+Rel(spa, sign, "Uses", "JSON/HTTPS")
+Rel(spa, accounts, "Uses", "JSON/HTTPS")
+
+Rel(ma, sign, "Uses", "JSON/HTTPS")
+Rel(ma, accounts, "Uses", "JSON/HTTPS")
+@enduml
+....
+
+== C4 Component Dynamic View
+[plantuml]
+....
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
+LAYOUT_WITH_LEGEND()
+
+ContainerDb(c4, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+Container(c1, "Single-Page Application", "JavaScript and Angular", "Provides all of the Internet banking functionality to customers via their web browser.")
+Container_Boundary(b, "API Application") {
+Component(c3, "Security Component", "Spring Bean", "Provides functionality Related to signing in, changing passwords, etc.")
+Component(c2, "Sign In Controller", "Spring MVC Rest Controller", "Allows users to sign in to the Internet Banking System.")
+}
+Rel_R(c1, c2, "Submits credentials to", "JSON/HTTPS")
+Rel(c2, c3, "Calls isAuthenticated() on")
+Rel_R(c3, c4, "select * from users where username = ?", "JDBC")
 @enduml
 ....
 
