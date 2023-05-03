@@ -63,13 +63,13 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../appendix/bibliography.html">Bibliography</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/quote.html">Quote</a>
+  </li>
   <li class="nav-item is-current-path is-active" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../appendix/quote.html">Quote</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="asciidoc.html">Asciidoc</a>
-  </li>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="kroki.html">Kroki</a>
   </li>
@@ -112,7 +112,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Body of Knowledge</a></li>
-    <li><a href="../appendix/quote.html">Quote</a></li>
+    <li><a href="asciidoc.html">Asciidoc</a></li>
     <li><a href="plantuml.html">PlantUML</a></li>
   </ul>
 </nav>
@@ -128,12 +128,12 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#c4-system-context-view">C4 System Context View</a></li>
-<li><a href="#c4-container-view-shows-application-service-microservice-etc">C4 Container View - shows application, service, microservice, etc</a></li>
-<li><a href="#c4-component-view">C4 Component View</a></li>
 <li><a href="#c4-system-landscape-view">C4 System Landscape View</a></li>
-<li><a href="#c4-dynamic-view">C4 Dynamic View</a></li>
-<li><a href="#c4-deployment-with-detail-view">C4 Deployment with Detail View</a></li>
+<li><a href="#c4-container-view-applications-services-level">C4 Container View (applications, services level)</a></li>
+<li><a href="#c4-container-view-deployment-with-detail-view">C4 Container View (Deployment with Detail View)</a></li>
 <li><a href="#c4-container-view-on-messaging-bus">C4 Container View on Messaging Bus</a></li>
+<li><a href="#c4-component-view">C4 Component View</a></li>
+<li><a href="#c4-component-dynamic-view">C4 Component Dynamic View</a></li>
 <li><a href="#uml-sequence-calling-external-sys">UML Sequence (calling external sys)</a></li>
 <li><a href="#uml-class-blueprint">UML Class (blueprint)</a></li>
 <li><a href="#uml-activity-workflow-mars-theme">UML Activity / Workflow (Mars Theme)</a></li>
@@ -168,11 +168,41 @@ use plantuml for drawing C4 and UML diagram in general
 </div>
 </div>
 <div class="sect1">
-<h2 id="c4-container-view-shows-application-service-microservice-etc"><a class="anchor" href="#c4-container-view-shows-application-service-microservice-etc"></a>C4 Container View - shows application, service, microservice, etc</h2>
+<h2 id="c4-system-landscape-view"><a class="anchor" href="#c4-system-landscape-view"></a>C4 System Landscape View</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-13f2493662a1f6e9a6cd70ab38cdfa84e350c3b7.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="c4-container-view-applications-services-level"><a class="anchor" href="#c4-container-view-applications-services-level"></a>C4 Container View (applications, services level)</h2>
 <div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
 <img src="../_images/diag-8b5bed6488fcfb26df072e0b04486b8a750638c4.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="c4-container-view-deployment-with-detail-view"><a class="anchor" href="#c4-container-view-deployment-with-detail-view"></a>C4 Container View (Deployment with Detail View)</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-e3011fe7c166517047e617a2fab32725483766a8.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="c4-container-view-on-messaging-bus"><a class="anchor" href="#c4-container-view-on-messaging-bus"></a>C4 Container View on Messaging Bus</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-b21f2f02ee07b9bcae482c0295a389e5062026d1.svg" alt="Diagram">
 </div>
 </div>
 </div>
@@ -188,41 +218,11 @@ use plantuml for drawing C4 and UML diagram in general
 </div>
 </div>
 <div class="sect1">
-<h2 id="c4-system-landscape-view"><a class="anchor" href="#c4-system-landscape-view"></a>C4 System Landscape View</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-13f2493662a1f6e9a6cd70ab38cdfa84e350c3b7.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="c4-dynamic-view"><a class="anchor" href="#c4-dynamic-view"></a>C4 Dynamic View</h2>
+<h2 id="c4-component-dynamic-view"><a class="anchor" href="#c4-component-dynamic-view"></a>C4 Component Dynamic View</h2>
 <div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
 <img src="../_images/diag-8f0c137e0bc8fe787ea28c07dbc49d8e2e1ae01e.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="c4-deployment-with-detail-view"><a class="anchor" href="#c4-deployment-with-detail-view"></a>C4 Deployment with Detail View</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-e3011fe7c166517047e617a2fab32725483766a8.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="c4-container-view-on-messaging-bus"><a class="anchor" href="#c4-container-view-on-messaging-bus"></a>C4 Container View on Messaging Bus</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-b21f2f02ee07b9bcae482c0295a389e5062026d1.svg" alt="Diagram">
 </div>
 </div>
 </div>

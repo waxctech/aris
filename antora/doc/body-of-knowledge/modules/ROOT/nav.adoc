@@ -2,7 +2,7 @@
 * xref:appendix/definitions.adoc[Definitions]
 * xref:appendix/bibliography.adoc[Bibliography]
 * xref:appendix/quote.adoc[Quote]
-** xref:toolchain/asciidoc.adoc[Asciidoc]
+* xref:toolchain/asciidoc.adoc[Asciidoc]
 ** xref:toolchain/kroki.adoc[Kroki]
 ** xref:toolchain/vega.adoc[Vega]
 ** xref:toolchain/plantuml.adoc[PlantUML]

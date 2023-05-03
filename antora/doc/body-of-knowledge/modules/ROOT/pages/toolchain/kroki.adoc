@@ -5,6 +5,7 @@ Manchi L.<manchi@waxc.tech>
 :icons: font
 :gnuplot: /usr/local/bin/gnuplot
 
+
 [NOTE]
 ====
 use online editor to create diagram, past it on asciidoc as text:
@@ -30,6 +31,12 @@ use online editor to create diagram, past it on asciidoc as text:
 set title "Example Plot"
 plot cos(x)
 ....
+
+== Desmos Math pass through
+[pass]
+++++
+<iframe src="https://www.desmos.com/calculator/vttkiwhc9y?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+++++
 
 == Graphviz
 [graphviz]

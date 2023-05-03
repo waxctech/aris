@@ -4,13 +4,7 @@
 
 {description}
 
-== Standard Body of Knowledge
-[graphviz]
-....
-digraph D {
-a->b
-}
-....
+image::myexcalidraw.svg[]
 
 [%autowidth,cols="a,a,a"]
 //[%autowidth]
