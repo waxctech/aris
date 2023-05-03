@@ -4,10 +4,9 @@
 
 {description}
 
-image::myexcalidraw.svg[]
+image::management-frameworks.svg[]
 
 [%autowidth,cols="a,a,a"]
-//[%autowidth]
 |===
 |Book of Knowledge |Organization |Knowledge Area
 
