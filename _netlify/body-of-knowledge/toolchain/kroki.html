@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Diagramming Template :: Project Aris</title>
-    <link rel="canonical" href="https://docs.waxc.tech/body-of-knowledge/toolchain/diagramming.html">
-    <link rel="prev" href="asciidoc.html">
-    <link rel="next" href="plantuml.html">
+    <link rel="canonical" href="https://docs.waxc.tech/body-of-knowledge/toolchain/kroki.html">
     <meta name="generator" content="Antora 3.1.3">
 <!-- https://realfavicongenerator.net/ -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -56,20 +54,20 @@
   <nav class="nav-menu">
     <h3 class="title"><a href="../index.html">Body of Knowledge</a></h3>
 <ul class="nav-list">
-  <li class="nav-item is-current-path is-active" data-depth="0">
+  <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../appendix/definitions.html">Definitions</a>
   </li>
-  <li class="nav-item is-current-path is-active" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../appendix/bibliography.html">Bibliography</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="asciidoc.html">Asciidoc</a>
   </li>
-  <li class="nav-item is-current-page is-active" data-depth="2">
-    <a class="nav-link" href="diagramming.html">Diagramming</a>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vega.html">Diagramming</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="plantuml.html">Plantuml</a>
@@ -107,11 +105,10 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Body of Knowledge</a></li>
-    <li><a href="../appendix/bibliography.html">Bibliography</a></li>
-    <li><a href="diagramming.html">Diagramming</a></li>
+    <li><a href="kroki.html">Diagramming Template</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///Users/mac/Repo/aris/antora/doc/body-of-knowledge/modules/ROOT/pages/toolchain/diagramming.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///Users/mac/Repo/aris/antora/doc/body-of-knowledge/modules/ROOT/pages/toolchain/kroki.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -122,62 +119,259 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#diagramming">Diagramming</a></li>
+<li><a href="#mathjax-notation">MathJax notation</a></li>
+<li><a href="#gnuplot">Gnuplot</a></li>
+<li><a href="#graphviz">Graphviz</a></li>
+<li><a href="#blockdiag">Blockdiag</a></li>
+<li><a href="#dbml">DBML</a></li>
+<li><a href="#git-branching">Git Branching</a></li>
+<li><a href="#timeline-lead-time">Timeline (lead time)</a></li>
+<li><a href="#network">Network</a></li>
+<li><a href="#json-specification">JSON Specification</a></li>
+<li><a href="#gantt-chart">Gantt Chart</a></li>
+<li><a href="#mindmap">Mindmap</a></li>
+<li><a href="#org-chart-wbs">Org Chart / WBS</a></li>
+<li><a href="#material-design-icon">Material Design Icon</a></li>
+<li><a href="#transparent-color-map">Transparent Color Map</a></li>
+<li><a href="#useful-links">Useful links:</a></li>
 </ul>
 </div>
-<div class="sect1">
-<h2 id="diagramming"><a class="anchor" href="#diagramming"></a>Diagramming</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>Plantuml - State Diagram</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+use online editor to create diagram, past it on asciidoc as text
+</td>
+</tr>
+</table>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://excalidraw.com/">excalidraw online editor</a></p>
+</li>
+<li>
+<p><a href="https://kroki.io/">kroki online editor</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mathjax-notation"><a class="anchor" href="#mathjax-notation"></a>MathJax notation</h2>
+<div class="sectionbody">
+  <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+</div>
+</div>
+<div class="sect1">
+<h2 id="gnuplot"><a class="anchor" href="#gnuplot"></a>Gnuplot</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="title">Gnuplot Example</div>
+<div class="content">
+<pre>set title "Example Plot"
+plot cos(x)</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="graphviz"><a class="anchor" href="#graphviz"></a>Graphviz</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/diag-18e9953d081bdf8fe9916cf2a88154b335c98bca.svg" alt="Diagram">
+<img src="../_images/diag-645a4cefc5900e075c6a5437c59b6fc134f2530b.svg" alt="Diagram">
 </div>
 </div>
-<div class="paragraph">
-<p>Plantuml - Gantt Chart</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="blockdiag"><a class="anchor" href="#blockdiag"></a>Blockdiag</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/diag-e4bfb1c6618ded01c2ff26b2400875553b7851ef.svg" alt="Diagram">
+<img src="../_images/diag-30099373bbde18f5b50707e628098ec25183d350.svg" alt="Diagram">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dbml"><a class="anchor" href="#dbml"></a>DBML</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/abcd-flowchart-0678675d0486c6be62dfdedffbec86639187f2fa.svg" alt="abcd-flowchart">
+<img src="../_images/diag-21f878623b950ab57f15e97aa4b6cadd389088be.svg" alt="Diagram">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="git-branching"><a class="anchor" href="#git-branching"></a>Git Branching</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/diag-765f836a65b7b42ed9d1f923b93feedbad41d649.svg" alt="Diagram">
+<img src="../_images/diag-3bd2ca9def5a1eac174daeb6811c040b32182cf6.svg" alt="Diagram">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="timeline-lead-time"><a class="anchor" href="#timeline-lead-time"></a>Timeline (lead time)</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/diag-f23c073fd9eaa289da443cd1bf7441173f045de4.svg" alt="Diagram">
+<img src="../_images/diag-01662ade36373d2c5362ba9bb8adc137a89eba90.svg" alt="Diagram">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="network"><a class="anchor" href="#network"></a>Network</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/diagram-classes-8217fdeb933886c67408a54e411926f644a2879d.png" alt="diagram-classes">
+<img src="../_images/diag-d1d7275e5dc3bc5c1621030fe47302c2db1d0043.svg" alt="Diagram">
 </div>
 </div>
-<div class="paragraph">
-<p><a href="http://excalidraw.com/">excalidraw online drawing tool</a></p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="json-specification"><a class="anchor" href="#json-specification"></a>JSON Specification</h2>
+<div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
-<img src="../_images/diag-a524ee111cb715eb4c6ee56691d9d94af4897c36.svg" alt="Diagram">
+<img src="../_images/diag-f790746e134777a50e7152d0e0e6c1b99b1330df.svg" alt="Diagram">
 </div>
 </div>
 </div>
 </div>
-<nav class="pagination">
-  <span class="prev"><a href="asciidoc.html">Asciidoc</a></span>
-  <span class="next"><a href="plantuml.html">Plantuml</a></span>
-</nav>
+<div class="sect1">
+<h2 id="gantt-chart"><a class="anchor" href="#gantt-chart"></a>Gantt Chart</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-0a1f86a4bbb7ea7b0f327207762059a6c44263d7.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mindmap"><a class="anchor" href="#mindmap"></a>Mindmap</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-3ec9f816ababb31600ce922afe7596d0e5a50a11.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="org-chart-wbs"><a class="anchor" href="#org-chart-wbs"></a>Org Chart / WBS</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-692a77bde9474e57121431691d72fc705939df11.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="material-design-icon"><a class="anchor" href="#material-design-icon"></a>Material Design Icon</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-2c0c0e7a2cff1638341302367ebc5afe16c27ccc.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transparent-color-map"><a class="anchor" href="#transparent-color-map"></a>Transparent Color Map</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-d4dd14ccdd6f050fea954469d4bcd75f100c08f4.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="useful-links"><a class="anchor" href="#useful-links"></a>Useful links:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://c4model.com/#examples">C4 Modeling</a></p>
+</li>
+<li>
+<p><a href="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/samples/C4CoreDiagrams.md">C4 Core diagram with plantuml</a></p>
+</li>
+<li>
+<p><a href="https://graphviz.org/gallery/">graphviz gallery</a></p>
+</li>
+<li>
+<p><a href="http://magjac.com/graphviz-visual-editor/">graphviz online editor</a></p>
+</li>
+<li>
+<p><a href="https://diagrams.mingrammer.com/docs/getting-started/examples">Cloud Architecture</a></p>
+</li>
+<li>
+<p><a href="https://github.com/awslabs/aws-icons-for-plantuml">aws plantuml</a></p>
+</li>
+<li>
+<p><a href="https://docs.asciidoctor.org/diagram-extension/latest/#meme">asciidoc</a></p>
+</li>
+<li>
+<p><a href="https://vega.github.io/vega/">VISUALIZATION GRAMMARS</a></p>
+</li>
+<li>
+<p><a href="https://vega.github.io/vega-lite/">vega-lite</a></p>
+</li>
+<li>
+<p><a href="https://kroki.io/#cheat-sheet">kroki</a></p>
+</li>
+<li>
+<p><a href="https://github.com/mermaid-js/mermaid">mermaid demo</a></p>
+</li>
+<li>
+<p><a href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/index.html">Tutorial on Plantuml</a></p>
+</li>
+<li>
+<p><a href="https://the-lum.github.io/puml-themes-gallery/">Plantuml official themes</a></p>
+</li>
+<li>
+<p><a href="https://bschwarz.github.io/puml-themes/gallery.html">Plantuml Gallery</a></p>
+</li>
+<li>
+<p><a href="http://ditaa.sourceforge.net/#usage">ditaa example</a></p>
+</li>
+<li>
+<p><a href="https://mermaid.live/edit">mermaid live editor</a></p>
+</li>
+<li>
+<p><a href="https://edotor.net/">edotor live editor with auto complete</a></p>
+</li>
+<li>
+<p><a href="https://www.devtoolsdaily.com/graphviz/">devtool &amp; cheatsheet</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ArsMasiuk/qvge">qvga editor</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </article>
   </div>
 </main>
@@ -405,7 +599,7 @@
 <script>
   window.antora = window.antora || {}
   window.antora.basePath = '../..'
-  window.antora.pagePath = '/body-of-knowledge/toolchain/diagramming.html'
+  window.antora.pagePath = '/body-of-knowledge/toolchain/kroki.html'
 </script>
 <script src="../../antora/js/site.js"></script>
 <script src="../../antora/js/vendor/lunr.js"></script>

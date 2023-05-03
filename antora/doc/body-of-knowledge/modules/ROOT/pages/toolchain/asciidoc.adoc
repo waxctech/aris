@@ -1,88 +1,148 @@
 = AsciiDoc Template
 :navtitle: asciidoc
+:author: Manchi L.
+:email: manchi@waxc.tech
 :toc:
 :icons: font
 :url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+:source-language: kotlin
+:source-highlighter: highlight.js
+:highlightjs-languages: rust, kotlin, java, scala, python, javascript, typescript
 
-Content entered directly below the header but before the first section heading is called the preamble.
+----
+In AsciiDoc, the hierarchy of structural elements from outer to inner is Document > Section > Block > Paragraph > Line
+----
 
-== First level heading
+== document: header reference
+This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].
 
-This is a paragraph with a *bold* word and an _italicized_ word.
+== block: image caption with .index
+.Image caption //image label
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/440px-Cc.logo.circle.svg.png[]
 
-.Image caption
-
-
+== block: footnote
 This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
 
-=== Second level heading
-
-.Unordered list title
-* list item 1
-** nested list item
-*** nested nested list item 1
-*** nested nested list item 2
-* list item 2
-
-==== Third level heading
-
-[#id-for-listing-block]
-.Listing block title
-----
-Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.
-----
-
-===== Fourth level heading
-
-.Table title
-|===
-|Column heading 1 |Column heading 2
-
-|Column 1, row 1
-|Column 2, row 1
-
-|Column 1, row 2
-|Column 2, row 2
-|===
-
-====== Fifth level heading
-
+== block: ordered list, unordered list use `*`
+//- list divider
+. ordered list item
+.. nested ordered list item
+. ordered list item
+//-
+== block: quote using `----`
 [quote,firstname lastname,movie title]
 ____
 I am a block quote or a prose excerpt.
 I am subject to normal substitutions.
 ____
 
-[verse,firstname lastname,poem title and more]
-____
-I am a verse block.
-  Indents and endlines are preserved in verse blocks.
-____
-
-== First level heading
-
+== block: admonition
 TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+`NOTE:` paragraph
+`[NOTE] with ====`  block
 
-// I am a comment and won't be rendered.
+== block: include
+`include::filename.txt[tag=definition]`
+`include::filename.txt[lines=5..10]`
 
-. ordered list item
-.. nested ordered list item
-. ordered list item
+== block: description list using `::` to `::::`
+First term:: The description can be placed on the same line
+as the term.
+Second term:::
+Description of the second term.
+The description can also start on its own line.
 
-== First level heading
+== block: console with `$`
+ $cd projects/my-book
 
-This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
-This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].
+== block: indent with `+`
+* Every list item has at least one paragraph of content,
+which may be wrapped, even using a hanging indent.
++
+Additional paragraphs or blocks are adjoined by putting
+a list continuation on a line adjacent to both blocks.
++
+list continuation:: a plus sign (`{plus}`) on a line by itself
 
+* A literal paragraph does not require a list continuation.
 
-== MathJax notation
+== block: inline image
+`image:`
+
+== block: pass through
 ++++
-  <script>
-  MathJax = {
-    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-  };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can include raw HTML, like this embedded Gist:
+</p>
+
+<script src="https://gist.github.com/mojavelinux/5333524.js">
+</script>
 ++++
+
+== block: nested block with `====` & `=====`
+
+====
+Here are your options:
+
+.Red Pill
+[%collapsible]
+======
+Escape into the real world.
+======
+
+.Blue Pill
+[%collapsible]
+======
+Live within the simulated reality without want or fear.
+======
+====
+
+== line: hard line break
+
+[%hardbreaks]
+
+== line: Text formatting
+Can't pick one? Let's use them `*_all_*`.
+
+Mark my words, #automation is essential#.
+
+Where did all the [.underline]#cores# go?
+
+We need [.line-through]#ten# twenty VMs.
+
+A [.myrole]#custom role# must be fulfilled by the theme.
+
+^super^script
+
+~sub~script
+
+== line: smart quote
+"`double curved quotes`"
+'`single curved quotes`'
+
+== line: anchor
+`[[section-b]]`Inline anchors make arbitrary content referenceable.
+
+== macro: keyboard
+kbd:[F11]
+
+== macro: menu
+Select menu:View[Zoom > Reset > next] to reset the zoom level to the default setting.
+
+== marco: call out
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+  "Hello World!" // <3>
+end
+----
+<1> Library import
+<2> URL mapping
+<3> HTTP response body
+
+
+
+

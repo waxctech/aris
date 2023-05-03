@@ -1,0 +1,370 @@
+= Diagramming Template
+Manchi L.<manchi@waxc.tech>
+1.0, May 1, 2023: Diagramming Template
+:toc:
+:icons: font
+:gnuplot: /usr/local/bin/gnuplot
+
+TIP: use online editor to create diagram, past it on asciidoc as text
+
+* http://excalidraw.com/[excalidraw online editor]
+* https://kroki.io/[kroki online editor]
+
+
+== MathJax notation
+++++
+  <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+++++
+
+== Gnuplot
+.Gnuplot Example
+[gnuplot]
+....
+set title "Example Plot"
+plot cos(x)
+....
+
+== Graphviz
+[graphviz]
+....
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+
+	node [shape = doublecircle]; LR_0 LR_3;
+	node [shape = circle];
+
+	LR_0 -> LR_2 [ label = "SS(B)" ];
+	LR_0 -> LR_1 [ label = "SS(S)" ];
+	LR_1 -> LR_3 [ label = "S($end)" ];
+	LR_2 -> LR_6 [ label = "SS(b)" ];
+	LR_2 -> LR_5 [ label = "SS(a)" ];
+}
+....
+
+== Blockdiag
+[blockdiag]
+....
+blockdiag {
+  Kroki -> generates -> "Block diagrams";
+  Kroki -> is -> "very easy!";
+
+  Kroki [color = "greenyellow"];
+  "Block diagrams" [color = "pink"];
+  "very easy!" [color = "orange"];
+}
+....
+
+== DBML
+[dbml]
+....
+Table users {
+  id integer
+  username varchar
+  role varchar
+  created_at timestamp
+}
+
+Table posts {
+  id integer [primary key]
+  title varchar
+  body text [note: 'Content of the post']
+  user_id integer
+  status post_status
+  created_at timestamp
+}
+
+Enum post_status {
+  draft
+  published
+  private [note: 'visible via URL only']
+}
+
+Ref: posts.user_id > users.id // many-to-one
+....
+
+== Git Branching
+[pikchr]
+....
+scale = 0.8
+fill = white
+linewid *= 0.5
+circle "C0" fit
+circlerad = previous.radius
+arrow
+circle "C1"
+arrow
+circle "C2"
+arrow
+circle "C4"
+arrow
+circle "C6"
+circle "C3" at dist(C2,C4) heading 30 from C2
+arrow
+circle "C5"
+arrow from C2 to C3 chop
+C3P: circle "C3'" at dist(C4,C6) heading 30 from C6
+arrow right from C3P.e
+C5P: circle "C5'"
+arrow from C6 to C3P chop
+
+box height C3.y-C2.y \
+    width (C5P.e.x-C0.w.x)+linewid \
+    with .w at 0.5*linewid west of C0.w \
+    behind C0 \
+    fill 0xc6e2ff thin color gray
+box same width previous.e.x - C2.w.x \
+    with .se at previous.ne \
+    fill 0x9accfc
+"trunk" below at 2nd last box.s
+"feature branch" above at last box.n
+....
+
+== Timeline (lead time)
+[plantuml]
+....
+@startuml
+scale 5 as 150 pixels
+
+clock clk with period 1
+binary "enable" as en
+binary "R/W" as rw
+binary "data Valid" as dv
+concise "dataBus" as db
+concise "address bus" as addr
+
+@6 as :write_beg
+@10 as :write_end
+
+@15 as :read_beg
+@19 as :read_end
+
+
+@0
+en is low
+db is "0x0"
+addr is "0x03f"
+rw is low
+dv is 0
+
+@:write_beg-3
+en is high
+@:write_beg-2
+db is "0xDEADBEEF"
+@:write_beg-1
+dv is 1
+@:write_beg
+rw is high
+
+
+@:write_end
+rw is low
+dv is low
+@:write_end+1
+rw is low
+db is "0x0"
+addr is "0x23"
+
+@12
+dv is high
+@13
+db is "0xFFFF"
+
+@20
+en is low
+dv is low
+@21
+db is "0x0"
+
+highlight :write_beg to :write_end #Gold:Write
+highlight :read_beg to :read_end #lightBlue:Read
+
+db@:write_beg-1 <-> @:write_end : setup time
+db@:write_beg-1 -> addr@:write_end+1 : hold
+@enduml
+....
+
+== Network
+[plantuml]
+....
+@startuml
+nwdiag {
+group {
+color = "#FFaaaa";
+web01;
+db01;
+}
+group {
+color = "#aaaaFF";
+web02;
+db02;
+}
+network dmz {
+address = "210.x.x.x/24"
+
+      web01 [address = "210.x.x.1"];
+      web02 [address = "210.x.x.2"];
+  }
+  network internal {
+      address = "172.x.x.x/24";
+
+      web01 [address = "172.x.x.1"];
+      web02 [address = "172.x.x.2"];
+      db01 ;
+      db02 ;
+  }
+}
+@enduml
+....
+
+== JSON Specification
+[plantuml]
+....
+@startjson
+{
+"null": null,
+"true": true,
+"false": false,
+"JSON_Number": [-1, -1.1, "<color:green>TBC"],
+"JSON_String": "a\nb\rc\td <color:green>TBC...",
+"JSON_Object": {
+"{}": {},
+"k_int": 123,
+"k_str": "abc",
+"k_obj": {"k": "v"}
+},
+"JSON_Array" : [
+[],
+[true, false],
+[-1, 1],
+["a", "b", "c"],
+["mix", null, true, 1, {"k": "v"}]
+]
+}
+@endjson
+....
+
+== Gantt Chart
+[plantuml]
+....
+@startgantt
+
+Project starts 2020-09-01
+
+[taskA] starts 2020-09-01 and lasts 3 days
+[taskB] starts 2020-09-10 and lasts 3 days
+[taskB] displays on same row as [taskA]
+
+[task01] starts 2020-09-05 and lasts 4 days
+
+then [task02] lasts 8 days
+note bottom
+note for task02
+more notes
+end note
+
+then [task03] lasts 7 days
+note bottom
+note for task03
+more notes
+end note
+
+-- separator --
+
+[taskC] starts 2020-09-02 and lasts 5 days
+[taskD] starts 2020-09-09 and lasts 5 days
+[taskD] displays on same row as [taskC]
+
+[task 10] starts 2020-09-05 and lasts 5 days
+then [task 11] lasts 5 days
+note bottom
+note for task11
+more notes
+end note
+@endgantt
+....
+
+== Mindmap
+[plantuml]
+....
+@startmindmap
++[#Orange] Colors
+++[#lightgreen] Green
+++[#FFBBCC] Rose
+--[#lightblue] Blue
+@endmindmap
+....
+
+== Org Chart / WBS
+[plantuml]
+....
+@startwbs
+* Business Process Modelling WBS
+** Launch the project
+*** Complete Stakeholder Research
+*** Initial Implementation Plan
+** Design phase
+*** Model of AsIs Processes Completed
+****< Model of AsIs Processes Completed1
+****> Model of AsIs Processes Completed2
+***< Measure AsIs performance metrics
+***< Identify Quick Wins
+@endwbs
+....
+
+== Material Design Icon
+[plantuml]
+....
+@startuml
+!include <material/common>
+' To import the sprite file you DON'T need to place a prefix!
+!include <material/folder_move>
+
+MA_FOLDER_MOVE(Red, 1, dir, rectangle, "A label")
+@enduml
+....
+
+== Transparent Color Map
+[plantuml]
+....
+@startdot
+graph Transparency {
+layout=neato
+start=11 // empiric value to set orientation
+bgcolor="#0000ff11"
+node [shape=circle width=2.22 label="" style=filled]
+5 [color="#0000ff80"]
+1 [color="#ff000080"]
+2 [color="#eeee0080"]
+1 -- 2 -- 5 -- 1
+}
+@enddot
+....
+
+== Useful links:
+- https://c4model.com/#examples[C4 Modeling]
+- https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/samples/C4CoreDiagrams.md[C4 Core diagram with plantuml]
+- https://graphviz.org/gallery/[graphviz gallery]
+- http://magjac.com/graphviz-visual-editor/[graphviz online editor]
+- https://diagrams.mingrammer.com/docs/getting-started/examples[Cloud Architecture]
+- https://github.com/awslabs/aws-icons-for-plantuml[aws plantuml]
+- https://docs.asciidoctor.org/diagram-extension/latest/#meme[asciidoc]
+- https://vega.github.io/vega/[VISUALIZATION GRAMMARS]
+- https://vega.github.io/vega-lite/[vega-lite]
+- https://kroki.io/#cheat-sheet[kroki]
+- https://github.com/mermaid-js/mermaid[mermaid demo]
+- https://crashedmind.github.io/PlantUMLHitchhikersGuide/index.html[Tutorial on Plantuml]
+- https://the-lum.github.io/puml-themes-gallery/[Plantuml official themes]
+- https://bschwarz.github.io/puml-themes/gallery.html[Plantuml Gallery]
+- http://ditaa.sourceforge.net/#usage[ditaa example]
+- https://mermaid.live/edit[mermaid live editor]
+- https://edotor.net/[edotor live editor with auto complete]
+- https://www.devtoolsdaily.com/graphviz/[devtool & cheatsheet]
+- https://github.com/ArsMasiuk/qvge[qvga editor]
+

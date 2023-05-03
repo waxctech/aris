@@ -1,0 +1,41 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" width="429" height="148" viewBox="0 0 537.378 186.684">
+<path d="M2,164L535,164L535,93L2,93Z"  style="fill:rgb(198,226,255);stroke-width:1.4472;stroke:rgb(128,128,128);" />
+<path d="M184,93L535,93L535,22L184,22Z"  style="fill:rgb(154,204,252);stroke-width:1.4472;stroke:rgb(128,128,128);" />
+<circle cx="43" cy="128" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="43" y="128" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C0</text>
+<polygon points="102,128 90,133 90,124" style="fill:rgb(0,0,0)"/>
+<path d="M66,128L96,128"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="125" cy="128" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="125" y="128" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C1</text>
+<polygon points="184,128 172,133 172,124" style="fill:rgb(0,0,0)"/>
+<path d="M148,128L178,128"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="207" cy="128" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="207" y="128" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C2</text>
+<polygon points="266,128 254,133 254,124" style="fill:rgb(0,0,0)"/>
+<path d="M230,128L260,128"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="289" cy="128" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="289" y="128" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C4</text>
+<polygon points="348,128 336,133 336,124" style="fill:rgb(0,0,0)"/>
+<path d="M312,128L342,128"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="371" cy="128" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="371" y="128" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C6</text>
+<circle cx="248" cy="57" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="248" y="57" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C3</text>
+<polygon points="307,57 295,62 295,53" style="fill:rgb(0,0,0)"/>
+<path d="M271,57L301,57"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="330" cy="57" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="330" y="57" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C5</text>
+<polygon points="236,77 234,89 227,85" style="fill:rgb(0,0,0)"/>
+<path d="M218,108L233,82"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="412" cy="57" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="412" y="57" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C3'</text>
+<polygon points="471,57 459,62 459,53" style="fill:rgb(0,0,0)"/>
+<path d="M435,57L465,57"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<circle cx="494" cy="57" r="23.0045"  style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="494" y="57" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">C5'</text>
+<polygon points="400,77 398,89 391,85" style="fill:rgb(0,0,0)"/>
+<path d="M382,108L397,82"  style="fill:none;stroke-width:2.16;stroke:rgb(0,0,0);" />
+<text x="268" y="174" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">trunk</text>
+<text x="359" y="12" text-anchor="middle" fill="rgb(0,0,0)" dominant-baseline="central">feature branch</text>
+</svg>
+

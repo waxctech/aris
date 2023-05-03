@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Plantuml Template :: Project Aris</title>
+    <title>PlantUML Template :: Project Aris</title>
     <link rel="canonical" href="https://docs.waxc.tech/body-of-knowledge/toolchain/plantuml.html">
-    <link rel="prev" href="diagramming.html">
+    <link rel="prev" href="vega.html">
     <meta name="generator" content="Antora 3.1.3">
 <!-- https://realfavicongenerator.net/ -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -68,7 +68,7 @@
     <a class="nav-link" href="asciidoc.html">Asciidoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="diagramming.html">Diagramming</a>
+    <a class="nav-link" href="vega.html">Diagramming</a>
   </li>
   <li class="nav-item is-current-page is-active" data-depth="2">
     <a class="nav-link" href="plantuml.html">Plantuml</a>
@@ -117,39 +117,42 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Plantuml Template</h1>
+<h1 class="page">PlantUML Template</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#system-context-view">System Context View</a></li>
+<li><a href="#c4-system-context-view">C4 System Context View</a></li>
 <li><a href="#c4-container-view-shows-application-service-microservice-etc">C4 Container View - shows application, service, microservice, etc</a></li>
 <li><a href="#c4-component-view">C4 Component View</a></li>
 <li><a href="#c4-system-landscape-view">C4 System Landscape View</a></li>
 <li><a href="#c4-dynamic-view">C4 Dynamic View</a></li>
 <li><a href="#c4-deployment-with-detail-view">C4 Deployment with Detail View</a></li>
 <li><a href="#c4-container-view-on-messaging-bus">C4 Container View on Messaging Bus</a></li>
-<li><a href="#uml-sequence">UML Sequence</a></li>
-<li><a href="#uml-class">UML Class</a></li>
+<li><a href="#uml-sequence-calling-external-sys">UML Sequence (calling external sys)</a></li>
+<li><a href="#uml-class-blueprint">UML Class (blueprint)</a></li>
 <li><a href="#uml-activity-workflow-mars-theme">UML Activity / Workflow (Mars Theme)</a></li>
 <li><a href="#uml-parallel-processing">UML Parallel Processing</a></li>
 <li><a href="#uml-state-machine-blueprint">UML State Machine (Blueprint)</a></li>
-<li><a href="#timeline">Timeline</a></li>
-<li><a href="#network">Network</a></li>
-<li><a href="#json-specification">JSON Specification</a></li>
-<li><a href="#ditaa-diagrams-through-ascii-art">DITAA - DIagrams Through Ascii Art</a></li>
-<li><a href="#gantt-chart">Gantt Chart</a></li>
-<li><a href="#mindmap">Mindmap</a></li>
-<li><a href="#org-chart-wbs">Org Chart / WBS</a></li>
-<li><a href="#material-design-icon">Material Design Icon</a></li>
-<li><a href="#graphviz-directed-graph">Graphviz Directed Graph</a></li>
-<li><a href="#graphviz-undirected-graph">Graphviz undirected Graph</a></li>
-<li><a href="#transparent-color-map">transparent color map</a></li>
-<li><a href="#plantuml-themes">PlantUML Themes:</a></li>
-<li><a href="#useful-links">Useful links:</a></li>
 </ul>
 </div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+use plantuml for drawing C4 and UML diagram in general
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="system-context-view"><a class="anchor" href="#system-context-view"></a>System Context View</h2>
+<h2 id="c4-system-context-view"><a class="anchor" href="#c4-system-context-view"></a>C4 System Context View</h2>
 <div class="sectionbody">
 <div class="imageblock kroki">
 <div class="content">
@@ -219,15 +222,8 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="uml-sequence"><a class="anchor" href="#uml-sequence"></a>UML Sequence</h2>
+<h2 id="uml-sequence-calling-external-sys"><a class="anchor" href="#uml-sequence-calling-external-sys"></a>UML Sequence (calling external sys)</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>used for complex flow on calling external system</p>
-</li>
-</ul>
-</div>
 <div class="imageblock kroki">
 <div class="content">
 <img src="../_images/diag-4f47c41b3d2bb6add08a07514cfc822ba82641db.svg" alt="Diagram">
@@ -236,15 +232,8 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="uml-class"><a class="anchor" href="#uml-class"></a>UML Class</h2>
+<h2 id="uml-class-blueprint"><a class="anchor" href="#uml-class-blueprint"></a>UML Class (blueprint)</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>used for design pattern (Blueprint)</p>
-</li>
-</ul>
-</div>
 <div class="imageblock kroki">
 <div class="content">
 <img src="../_images/diag-ed8eb6fbd631e7a40a82e84d9e7e4de550e8f253.svg" alt="Diagram">
@@ -255,13 +244,6 @@
 <div class="sect1">
 <h2 id="uml-activity-workflow-mars-theme"><a class="anchor" href="#uml-activity-workflow-mars-theme"></a>UML Activity / Workflow (Mars Theme)</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>used for complex workflow</p>
-</li>
-</ul>
-</div>
 <div class="imageblock kroki">
 <div class="content">
 <img src="../_images/diag-f870708c2f7dad6ffe6f0291d139a86e199f25ef.svg" alt="Diagram">
@@ -289,188 +271,8 @@
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="timeline"><a class="anchor" href="#timeline"></a>Timeline</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>used to show lead time on each process</p>
-</li>
-</ul>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-01662ade36373d2c5362ba9bb8adc137a89eba90.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="network"><a class="anchor" href="#network"></a>Network</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-d1d7275e5dc3bc5c1621030fe47302c2db1d0043.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="json-specification"><a class="anchor" href="#json-specification"></a>JSON Specification</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-f790746e134777a50e7152d0e0e6c1b99b1330df.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ditaa-diagrams-through-ascii-art"><a class="anchor" href="#ditaa-diagrams-through-ascii-art"></a>DITAA - DIagrams Through Ascii Art</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>[more ditaa example](<a href="http://ditaa.sourceforge.net/#usage" class="bare">http://ditaa.sourceforge.net/#usage</a>)</p>
-</li>
-</ul>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-7ae881be0b13eda2db05a3936771059278b7fdf6.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="gantt-chart"><a class="anchor" href="#gantt-chart"></a>Gantt Chart</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-0a1f86a4bbb7ea7b0f327207762059a6c44263d7.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="mindmap"><a class="anchor" href="#mindmap"></a>Mindmap</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-3ec9f816ababb31600ce922afe7596d0e5a50a11.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="org-chart-wbs"><a class="anchor" href="#org-chart-wbs"></a>Org Chart / WBS</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-692a77bde9474e57121431691d72fc705939df11.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="material-design-icon"><a class="anchor" href="#material-design-icon"></a>Material Design Icon</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-2c0c0e7a2cff1638341302367ebc5afe16c27ccc.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="graphviz-directed-graph"><a class="anchor" href="#graphviz-directed-graph"></a>Graphviz Directed Graph</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-0c594104d780b1afd434fcad3c0b826c2ae20e6b.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="graphviz-undirected-graph"><a class="anchor" href="#graphviz-undirected-graph"></a>Graphviz undirected Graph</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-055bd1553fdbe857f8d926ec3bcde0bf58806808.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="transparent-color-map"><a class="anchor" href="#transparent-color-map"></a>transparent color map</h2>
-<div class="sectionbody">
-<div class="imageblock kroki">
-<div class="content">
-<img src="../_images/diag-1c21a2a24e70f27b4da2d71445b0db9ef787f0c4.svg" alt="Diagram">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="plantuml-themes"><a class="anchor" href="#plantuml-themes"></a>PlantUML Themes:</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>[list of official theme](<a href="https://the-lum.github.io/puml-themes-gallery/" class="bare">https://the-lum.github.io/puml-themes-gallery/</a>)
-[gallery](<a href="https://bschwarz.github.io/puml-themes/gallery.html" class="bare">https://bschwarz.github.io/puml-themes/gallery.html</a>)
-1. mars
-2. blueprint</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="useful-links"><a class="anchor" href="#useful-links"></a>Useful links:</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://c4model.com/#examples">C4 Modeling</a></p>
-</li>
-<li>
-<p><a href="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/samples/C4CoreDiagrams.md">C4 Core diagram with plantuml</a></p>
-</li>
-<li>
-<p><a href="https://graphviz.org/">graphviz</a></p>
-</li>
-<li>
-<p><a href="http://magjac.com/graphviz-visual-editor/">graphviz online editor</a></p>
-</li>
-<li>
-<p><a href="https://diagrams.mingrammer.com/">cloud arh</a></p>
-</li>
-<li>
-<p><a href="https://github.com/awslabs/aws-icons-for-plantuml">aws plantuml</a></p>
-</li>
-<li>
-<p><a href="https://docs.asciidoctor.org/diagram-extension/latest/#meme">asciidoc</a></p>
-</li>
-<li>
-<p><a href="https://vega.github.io/vega/">VISUALIZATION GRAMMARS</a></p>
-</li>
-<li>
-<p><a href="https://vega.github.io/vega-lite/">vega-lite</a></p>
-</li>
-<li>
-<p><a href="https://kroki.io/#cheat-sheet">kroki</a></p>
-</li>
-<li>
-<p><a href="https://github.com/mermaid-js/mermaid">mermaid demo</a></p>
-</li>
-<li>
-<p><a href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/index.html">Tutorial on Plantuml</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <nav class="pagination">
-  <span class="prev"><a href="diagramming.html">Diagramming</a></span>
+  <span class="prev"><a href="vega.html">Diagramming</a></span>
 </nav>
 </article>
   </div>

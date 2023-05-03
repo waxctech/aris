@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>AsciiDoc Template :: Project Aris</title>
-    <link rel="canonical" href="https://docs.waxc.tech/body-of-knowledge/toolchain/asciidoc.html">
-    <link rel="prev" href="../appendix/bibliography.html">
-    <link rel="next" href="vega.html">
+    <title>Vega Template :: Project Aris</title>
+    <link rel="canonical" href="https://docs.waxc.tech/body-of-knowledge/toolchain/vega.html">
+    <link rel="prev" href="asciidoc.html">
+    <link rel="next" href="plantuml.html">
     <meta name="generator" content="Antora 3.1.3">
 <!-- https://realfavicongenerator.net/ -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -65,10 +65,10 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../appendix/bibliography.html">Bibliography</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page is-active" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="asciidoc.html">Asciidoc</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page is-active" data-depth="2">
     <a class="nav-link" href="vega.html">Diagramming</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -108,196 +108,89 @@
   <ul>
     <li><a href="../index.html">Body of Knowledge</a></li>
     <li><a href="../appendix/bibliography.html">Bibliography</a></li>
-    <li><a href="asciidoc.html">Asciidoc</a></li>
+    <li><a href="vega.html">Diagramming</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///Users/mac/Repo/aris/antora/doc/body-of-knowledge/modules/ROOT/pages/toolchain/asciidoc.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///Users/mac/Repo/aris/antora/doc/body-of-knowledge/modules/ROOT/pages/toolchain/vega.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">AsciiDoc Template</h1>
-<div class="paragraph">
-<p>Content entered directly below the header but before the first section heading is called the preamble.</p>
+<h1 class="page">Vega Template</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#tips">Tips</a></li>
+<li><a href="#excelidraw">Excelidraw</a></li>
+<li><a href="#vega-wordcloud">Vega - WordCloud</a></li>
+<li><a href="#vega-divergence-stacked">Vega - Divergence Stacked</a></li>
+<li><a href="#vega-lite-bubble">Vega-lite Bubble</a></li>
+<li><a href="#vega-radar">Vega Radar</a></li>
+</ul>
 </div>
-----
-= Title
-This header specifies the title of the document. It should be the first line of the document and is prefixed with an equal sign (=).
-----
-
-
-== image caption with index
-.Image caption //image label
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/440px-Cc.logo.circle.svg.png[]
-
-== footnote
-This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
-
-== unordered list starting with .
-.Unordered list title
-* list item 1
-** nested list item
-*** nested nested list item 1
-*** nested nested list item 2
-* list item 2
-
-== ordered list starting with .
-//- list divider
-. ordered list item
-.. nested ordered list item
-. ordered list item
-//-
-== id for listing block
-[#id-for-listing-block]
-.Listing block title
-----
-Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.
-----
-
-[quote,firstname lastname,movie title]
-____
-I am a block quote or a prose excerpt.
-I am subject to normal substitutions.
-____
-
-TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
-
-== Link
-
-This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
-
-== header reference
-This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].
-
-== hard line break
-[%hardbreaks]
-
-== Text formatting
-Can't pick one? Let's use them `*_all_*`.
-
-== highlight
-Mark my words, #automation is essential#.
-Where did all the [.underline]#cores# go?
-We need [.line-through]#ten# twenty VMs.
-A [.myrole]#custom role# must be fulfilled by the theme.
-
-== superscript
-^super^script
-~sub~script
-
-== smart quote
-"`double curved quotes`"
-'`single curved quotes`'
-
-== anchor
-`[[section-b]]`Inline anchors make arbitrary content referenceable.
-
-
-== include
-`include::filename.txt[tag=definition]`
-`include::filename.txt[lines=5..10]`
-
-
-== description list (using 2 to 4 :)
-First term:: The description can be placed on the same line
-as the term.
-Second term:::
-Description of the second term.
-The description can also start on its own line.
-
-== use $ for command
- $cd projects/my-book
-
-== using + to indent
-* Every list item has at least one paragraph of content,
-which may be wrapped, even using a hanging indent.
-+
-Additional paragraphs or blocks are adjoined by putting
-a list continuation on a line adjacent to both blocks.
-+
-list continuation:: a plus sign (`{plus}`) on a line by itself
-
-* A literal paragraph does not require a list continuation.
-
-== inline image
-`image:`
-
-== keyboard macro
-kbd:[F11] kbd:[]
-
-== menu macro
-Select menu:View[Zoom > Reset > next] to reset the zoom level to the default setting.
-
-== call out
-[source,ruby]
-----
-require 'sinatra' // <1>
-
-get '/hi' do // <2>
-  "Hello World!" // <3>
-end
-----
-<1> Library import
-<2> URL mapping
-<3> HTTP response body
-
-== Admonitions
-`NOTE:` paragraph
-`[NOTE] with ====`  block
-
-== pass through block
+<div class="sect1">
+<h2 id="tips"><a class="anchor" href="#tips"></a>Tips</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>&lt;p&gt;
-Content in a passthrough block is passed to the output unprocessed.
-That means you can include raw HTML, like this embedded Gist:
-&lt;/p&gt;</p>
+<p><a href="https://vega.github.io/vega/examples/">vega example</a></p>
 </div>
-<div class="paragraph">
-<p>&lt;script src="https://gist.github.com/mojavelinux/5333524.js"&gt;
-&lt;/script&gt;</p>
 </div>
-== defien a block
-.Styles of music
-[#music-styles]
-****
-Go off on a tangent to describe what a style of music is.
-****
-
-== nested block - 4 x =, following by 5x=
-
-====
-Here are your options:
-
-.Red Pill
-[%collapsible]
-======
-Escape into the real world.
-======
-
-.Blue Pill
-[%collapsible]
-======
-Live within the simulated reality without want or fear.
-======
-====
-
-
-
-[cols=2*,stripes=even]
-|===
-|A1
-|B1
-|A2
-|B2
-|A3
-|B3
-|===
+</div>
+<div class="sect1">
+<h2 id="excelidraw"><a class="anchor" href="#excelidraw"></a>Excelidraw</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-a524ee111cb715eb4c6ee56691d9d94af4897c36.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vega-wordcloud"><a class="anchor" href="#vega-wordcloud"></a>Vega - WordCloud</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-f021fd85714c6fb505b68cb45c48e5cd30a86253.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vega-divergence-stacked"><a class="anchor" href="#vega-divergence-stacked"></a>Vega - Divergence Stacked</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-a091ac5b69d6f8a8edcf2c6a36dfa802f78c395d.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vega-lite-bubble"><a class="anchor" href="#vega-lite-bubble"></a>Vega-lite Bubble</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-b081143a71adefa2697aa0080eb41f10aeb54f80.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vega-radar"><a class="anchor" href="#vega-radar"></a>Vega Radar</h2>
+<div class="sectionbody">
+<div class="imageblock kroki">
+<div class="content">
+<img src="../_images/diag-86395a3e025f3b3803ed2adf9cdc6315cb96e86d.svg" alt="Diagram">
+</div>
+</div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../appendix/bibliography.html">Bibliography</a></span>
-  <span class="next"><a href="vega.html">Diagramming</a></span>
+  <span class="prev"><a href="asciidoc.html">Asciidoc</a></span>
+  <span class="next"><a href="plantuml.html">Plantuml</a></span>
 </nav>
 </article>
   </div>
@@ -526,7 +419,7 @@ Live within the simulated reality without want or fear.
 <script>
   window.antora = window.antora || {}
   window.antora.basePath = '../..'
-  window.antora.pagePath = '/body-of-knowledge/toolchain/asciidoc.html'
+  window.antora.pagePath = '/body-of-knowledge/toolchain/vega.html'
 </script>
 <script src="../../antora/js/site.js"></script>
 <script src="../../antora/js/vendor/lunr.js"></script>

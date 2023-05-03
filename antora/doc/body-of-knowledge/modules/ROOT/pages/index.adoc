@@ -5,8 +5,15 @@
 {description}
 
 == Standard Body of Knowledge
+[graphviz]
+....
+digraph D {
+a->b
+}
+....
 
-[cols="2,2,5a"]
+[%autowidth,cols="a,a,a"]
+//[%autowidth]
 |===
 |Book of Knowledge |Organization |Knowledge Area
 
@@ -89,4 +96,37 @@
 . Products & Services
 |===
 
+== Top Open Source Project
+
+|===
+|Language  |Project |#Forked
+
+|Golang
+|kubernetes
+|>35k
+
+|Typescript
+|vue.js
+|>33k
+
+|Javascript
+|node.js, React
+|>25k
+
+|Python
+|ansible
+|>23k
+
+|Scala
+|apache spark
+|>26k
+
+|Java
+|flink / (or hazelcast)
+|~2k
+
+|Kotlin
+|arrow-kt (or detekt)
+|~5k
+|===
 
