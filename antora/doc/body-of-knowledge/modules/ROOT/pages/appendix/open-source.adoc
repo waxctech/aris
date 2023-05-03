@@ -1,0 +1,40 @@
+= Open Source Project
+Firstname Lastname <author@asciidoctor.org>
+3.0, July 29, 2022: AsciiDoc article template
+:toc:open-source
+:icons: font
+
+== Top Open Source Project
+
+|===
+|Language  |Project |#Forked
+
+|Golang
+|kubernetes
+|>35k
+
+|Typescript
+|vue.js
+|>33k
+
+|Javascript
+|node.js, React
+|>25k
+
+|Python
+|ansible
+|>23k
+
+|Scala
+|apache spark
+|>26k
+
+|Java
+|flink / (or hazelcast)
+|~2k
+
+|Kotlin
+|arrow-kt (or detekt)
+|~5k
+|===
+

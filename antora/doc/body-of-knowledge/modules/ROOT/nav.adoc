@@ -1,7 +1,7 @@
-
 * xref:appendix/definitions.adoc[Definitions]
 * xref:appendix/bibliography.adoc[Bibliography]
 * xref:appendix/quote.adoc[Quote]
+* xref:appendix/open-source.adoc[Open Source Projects]
 * xref:toolchain/asciidoc.adoc[Asciidoc]
 ** xref:toolchain/kroki.adoc[Kroki]
 ** xref:toolchain/vega.adoc[Vega]
