@@ -1,17 +1,18 @@
-= Diagramming Template
+= Kroki Template
 Manchi L.<manchi@waxc.tech>
-1.0, May 1, 2023: Diagramming Template
+1.0, May 1, 2023: Kroki Template
 :toc:
 :icons: font
 :gnuplot: /usr/local/bin/gnuplot
 
-TIP: use online editor to create diagram, past it on asciidoc as text
-
+[NOTE]
+====
+use online editor to create diagram, past it on asciidoc as text:
 * http://excalidraw.com/[excalidraw online editor]
 * https://kroki.io/[kroki online editor]
+====
 
-
-== MathJax notation
+== MathJax
 ++++
   <script>
   MathJax = {

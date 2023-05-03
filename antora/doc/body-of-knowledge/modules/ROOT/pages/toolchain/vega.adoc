@@ -1,12 +1,11 @@
 = Vega Template
-:navtitle: diagramming
+:navtitle: Vega Template
 :toc:
 :icons: font
 
-== Tips
-https://vega.github.io/vega/examples/[vega example]
+TIP: https://vega.github.io/vega/examples/[online vega example]
 
-== Excelidraw
+== Excelidraw - free style
 [excalidraw]
 ....
 {
@@ -869,7 +868,6 @@ https://vega.github.io/vega/examples/[vega example]
   "files": {}
 }
 ....
-
 
 == Vega - WordCloud
 [vega]

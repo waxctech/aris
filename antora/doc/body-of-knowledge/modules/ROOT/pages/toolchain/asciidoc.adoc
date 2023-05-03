@@ -4,10 +4,9 @@
 :email: manchi@waxc.tech
 :toc:
 :icons: font
-:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
-:source-language: kotlin
 :source-highlighter: highlight.js
 :highlightjs-languages: rust, kotlin, java, scala, python, javascript, typescript
+:url-quickref: https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
 
 ----
 In AsciiDoc, the hierarchy of structural elements from outer to inner is Document > Section > Block > Paragraph > Line

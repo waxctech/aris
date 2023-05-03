@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>AsciiDoc Template :: Project Aris</title>
     <link rel="canonical" href="https://docs.waxc.tech/body-of-knowledge/toolchain/asciidoc.html">
-    <link rel="prev" href="../appendix/bibliography.html">
-    <link rel="next" href="vega.html">
+    <link rel="prev" href="../appendix/quote.html">
+    <link rel="next" href="kroki.html">
     <meta name="generator" content="Antora 3.1.3">
 <!-- https://realfavicongenerator.net/ -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -61,18 +61,24 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../appendix/definitions.html">Definitions</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/bibliography.html">Bibliography</a>
+  </li>
   <li class="nav-item is-current-path is-active" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../appendix/bibliography.html">Bibliography</a>
+    <a class="nav-link" href="../appendix/quote.html">Quote</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page is-active" data-depth="2">
     <a class="nav-link" href="asciidoc.html">Asciidoc</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="vega.html">Diagramming</a>
+    <a class="nav-link" href="kroki.html">Kroki</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="plantuml.html">Plantuml</a>
+    <a class="nav-link" href="vega.html">Vega</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plantuml.html">PlantUML</a>
   </li>
 </ul>
   </li>
@@ -107,7 +113,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Body of Knowledge</a></li>
-    <li><a href="../appendix/bibliography.html">Bibliography</a></li>
+    <li><a href="../appendix/quote.html">Quote</a></li>
     <li><a href="asciidoc.html">Asciidoc</a></li>
   </ul>
 </nav>
@@ -119,185 +125,338 @@
 </aside>
 <article class="doc">
 <h1 class="page">AsciiDoc Template</h1>
-<div class="paragraph">
-<p>Content entered directly below the header but before the first section heading is called the preamble.</p>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#document-header-reference">document: header reference</a></li>
+<li><a href="#block-image-caption-with-index">block: image caption with .index</a></li>
+<li><a href="#block-footnote">block: footnote</a></li>
+<li><a href="#block-ordered-list-unordered-list-use">block: ordered list, unordered list use <code>*</code></a></li>
+<li><a href="#block-admonition">block: admonition</a></li>
+<li><a href="#block-include">block: include</a></li>
+<li><a href="#block-description-list-using-to">block: description list using <code>::</code> to <code>::::</code></a></li>
+<li><a href="#block-console-with">block: console with <code>$</code></a></li>
+<li><a href="#block-indent-with">block: indent with <code>+</code></a></li>
+<li><a href="#block-inline-image">block: inline image</a></li>
+<li><a href="#block-pass-through">block: pass through</a></li>
+<li><a href="#block-nested-block-with">block: nested block with <code>====</code> &amp; <code>=====</code></a></li>
+<li><a href="#line-hard-line-break">line: hard line break</a></li>
+<li><a href="#line-text-formatting">line: Text formatting</a></li>
+<li><a href="#line-smart-quote">line: smart quote</a></li>
+<li><a href="#line-anchor">line: anchor</a></li>
+<li><a href="#macro-keyboard">macro: keyboard</a></li>
+<li><a href="#macro-menu">macro: menu</a></li>
+<li><a href="#marco-call-out">marco: call out</a></li>
+</ul>
 </div>
-----
-= Title
-This header specifies the title of the document. It should be the first line of the document and is prefixed with an equal sign (=).
-----
-
-
-== image caption with index
-.Image caption //image label
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/440px-Cc.logo.circle.svg.png[]
-
-== footnote
-This is another paragraph.footnote:[I am footnote text and will be displayed at the bottom of the article.]
-
-== unordered list starting with .
-.Unordered list title
-* list item 1
-** nested list item
-*** nested nested list item 1
-*** nested nested list item 2
-* list item 2
-
-== ordered list starting with .
-//- list divider
-. ordered list item
-.. nested ordered list item
-. ordered list item
-//-
-== id for listing block
-[#id-for-listing-block]
-.Listing block title
-----
-Content in a listing block is subject to verbatim substitutions.
-Listing block content is commonly used to preserve code input.
-----
-
-[quote,firstname lastname,movie title]
-____
-I am a block quote or a prose excerpt.
-I am subject to normal substitutions.
-____
-
-TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
-
-== Link
-
-This is a link to the https://docs.asciidoctor.org/home/[Asciidoctor documentation].
-
-== header reference
-This is an attribute reference {url-quickref}[that links this text to the AsciiDoc Syntax Quick Reference].
-
-== hard line break
-[%hardbreaks]
-
-== Text formatting
-Can't pick one? Let's use them `*_all_*`.
-
-== highlight
-Mark my words, #automation is essential#.
-Where did all the [.underline]#cores# go?
-We need [.line-through]#ten# twenty VMs.
-A [.myrole]#custom role# must be fulfilled by the theme.
-
-== superscript
-^super^script
-~sub~script
-
-== smart quote
-"`double curved quotes`"
-'`single curved quotes`'
-
-== anchor
-`[[section-b]]`Inline anchors make arbitrary content referenceable.
-
-
-== include
-`include::filename.txt[tag=definition]`
-`include::filename.txt[lines=5..10]`
-
-
-== description list (using 2 to 4 :)
-First term:: The description can be placed on the same line
-as the term.
-Second term:::
-Description of the second term.
-The description can also start on its own line.
-
-== use $ for command
- $cd projects/my-book
-
-== using + to indent
-* Every list item has at least one paragraph of content,
-which may be wrapped, even using a hanging indent.
-+
-Additional paragraphs or blocks are adjoined by putting
-a list continuation on a line adjacent to both blocks.
-+
-list continuation:: a plus sign (`{plus}`) on a line by itself
-
-* A literal paragraph does not require a list continuation.
-
-== inline image
-`image:`
-
-== keyboard macro
-kbd:[F11] kbd:[]
-
-== menu macro
-Select menu:View[Zoom > Reset > next] to reset the zoom level to the default setting.
-
-== call out
-[source,ruby]
-----
-require 'sinatra' // <1>
-
-get '/hi' do // <2>
-  "Hello World!" // <3>
-end
-----
-<1> Library import
-<2> URL mapping
-<3> HTTP response body
-
-== Admonitions
-`NOTE:` paragraph
-`[NOTE] with ====`  block
-
-== pass through block
+<div id="preamble">
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>In AsciiDoc, the hierarchy of structural elements from outer to inner is Document &gt; Section &gt; Block &gt; Paragraph &gt; Line</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="document-header-reference"><a class="anchor" href="#document-header-reference"></a>document: header reference</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>&lt;p&gt;
+<p>This is an attribute reference <a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/">that links this text to the AsciiDoc Syntax Quick Reference</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-image-caption-with-index"><a class="anchor" href="#block-image-caption-with-index"></a>block: image caption with .index</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Cc.logo.circle.svg/440px-Cc.logo.circle.svg.png" alt="440px Cc.logo.circle.svg">
+</div>
+<div class="title">Figure 1. Image caption //image label</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-footnote"><a class="anchor" href="#block-footnote"></a>block: footnote</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is another paragraph.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-ordered-list-unordered-list-use"><a class="anchor" href="#block-ordered-list-unordered-list-use"></a>block: ordered list, unordered list use <code>*</code></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ordered list item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>nested ordered list item</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>ordered list item
+== block: quote using <code>----</code></p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>I am a block quote or a prose excerpt.
+I am subject to normal substitutions.</p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-admonition"><a class="anchor" href="#block-admonition"></a>block: admonition</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+There are five admonition labels: Tip, Note, Important, Caution and Warning.
+<code>NOTE:</code> paragraph
+<code>[NOTE] with ====</code>  block
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-include"><a class="anchor" href="#block-include"></a>block: include</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>include::filename.txt[tag=definition]</code>
+<code>include::filename.txt[lines=5..10]</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-description-list-using-to"><a class="anchor" href="#block-description-list-using-to"></a>block: description list using <code>::</code> to <code>::::</code></h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">First term</dt>
+<dd>
+<p>The description can be placed on the same line
+as the term.</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Second term</dt>
+<dd>
+<p>Description of the second term.
+The description can also start on its own line.</p>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-console-with"><a class="anchor" href="#block-console-with"></a>block: console with <code>$</code></h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>$cd projects/my-book</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-indent-with"><a class="anchor" href="#block-indent-with"></a>block: indent with <code>+</code></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Every list item has at least one paragraph of content,
+which may be wrapped, even using a hanging indent.</p>
+<div class="paragraph">
+<p>Additional paragraphs or blocks are adjoined by putting
+a list continuation on a line adjacent to both blocks.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">list continuation</dt>
+<dd>
+<p>a plus sign (<code>&#43;</code>) on a line by itself</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>A literal paragraph does not require a list continuation.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-inline-image"><a class="anchor" href="#block-inline-image"></a>block: inline image</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>image:</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-pass-through"><a class="anchor" href="#block-pass-through"></a>block: pass through</h2>
+<div class="sectionbody">
+<p>
 Content in a passthrough block is passed to the output unprocessed.
 That means you can include raw HTML, like this embedded Gist:
-&lt;/p&gt;</p>
+</p>
+
+<script src="https://gist.github.com/mojavelinux/5333524.js">
+</script>
+</div>
+</div>
+<div class="sect1">
+<h2 id="block-nested-block-with"><a class="anchor" href="#block-nested-block-with"></a>block: nested block with <code>====</code> &amp; <code>=====</code></h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Here are your options:</p>
+</div>
+<details>
+<summary class="title">Red Pill</summary>
+<div class="content">
+<div class="paragraph">
+<p>Escape into the real world.</p>
+</div>
+</div>
+</details>
+<details>
+<summary class="title">Blue Pill</summary>
+<div class="content">
+<div class="paragraph">
+<p>Live within the simulated reality without want or fear.</p>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="line-hard-line-break"><a class="anchor" href="#line-hard-line-break"></a>line: hard line break</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="line-text-formatting"><a class="anchor" href="#line-text-formatting"></a>line: Text formatting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Can&#8217;t pick one? Let&#8217;s use them <code><strong><em>all</em></strong></code>.</p>
 </div>
 <div class="paragraph">
-<p>&lt;script src="https://gist.github.com/mojavelinux/5333524.js"&gt;
-&lt;/script&gt;</p>
+<p>Mark my words, <mark>automation is essential</mark>.</p>
 </div>
-== defien a block
-.Styles of music
-[#music-styles]
-****
-Go off on a tangent to describe what a style of music is.
-****
+<div class="paragraph">
+<p>Where did all the <span class="underline">cores</span> go?</p>
+</div>
+<div class="paragraph">
+<p>We need <span class="line-through">ten</span> twenty VMs.</p>
+</div>
+<div class="paragraph">
+<p>A <span class="myrole">custom role</span> must be fulfilled by the theme.</p>
+</div>
+<div class="paragraph">
+<p><sup>super</sup>script</p>
+</div>
+<div class="paragraph">
+<p><sub>sub</sub>script</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="line-smart-quote"><a class="anchor" href="#line-smart-quote"></a>line: smart quote</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#8220;double curved quotes&#8221;
+&#8216;single curved quotes&#8217;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="line-anchor"><a class="anchor" href="#line-anchor"></a>line: anchor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>`<a id="section-b"></a>`Inline anchors make arbitrary content referenceable.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="macro-keyboard"><a class="anchor" href="#macro-keyboard"></a>macro: keyboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><kbd>F11</kbd></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="macro-menu"><a class="anchor" href="#macro-menu"></a>macro: menu</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select <span class="menuseq"><b class="menu">View</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Zoom</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Reset</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">next</b></span> to reset the zoom level to the default setting.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="marco-call-out"><a class="anchor" href="#marco-call-out"></a>marco: call out</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;sinatra&#x27;</span> <i class="conum" data-value="1"></i><b>(1)</b>
 
-== nested block - 4 x =, following by 5x=
-
-====
-Here are your options:
-
-.Red Pill
-[%collapsible]
-======
-Escape into the real world.
-======
-
-.Blue Pill
-[%collapsible]
-======
-Live within the simulated reality without want or fear.
-======
-====
-
-
-
-[cols=2*,stripes=even]
-|===
-|A1
-|B1
-|A2
-|B2
-|A3
-|B3
-|===
+get <span class="hljs-string">&#x27;/hi&#x27;</span> <span class="hljs-keyword">do</span> <i class="conum" data-value="2"></i><b>(2)</b>
+  <span class="hljs-string">&quot;Hello World!&quot;</span> <i class="conum" data-value="3"></i><b>(3)</b>
+<span class="hljs-keyword">end</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Library import</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>URL mapping</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>HTTP response body</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. I am footnote text and will be displayed at the bottom of the article.
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../appendix/bibliography.html">Bibliography</a></span>
-  <span class="next"><a href="vega.html">Diagramming</a></span>
+  <span class="prev"><a href="../appendix/quote.html">Quote</a></span>
+  <span class="next"><a href="kroki.html">Kroki</a></span>
 </nav>
 </article>
   </div>
